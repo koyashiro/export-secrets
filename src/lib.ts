@@ -1,4 +1,4 @@
-import * as core from "@actions/core";
+import type * as core from "@actions/core";
 import { z } from "zod";
 
 type ActionsCore = typeof core;
