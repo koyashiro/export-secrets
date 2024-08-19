@@ -8,7 +8,7 @@ Set the JSON of secrets to `secrets`.
 
 ```yaml
 steps:
-  - uses: koyashiro/export-secrets@v0.5.0
+  - uses: koyashiro/export-secrets@v0.5.1
     with:
       secrets: ${{ toJSON(secrets) }}
 ```
@@ -20,7 +20,7 @@ For example, a secret like `TF_VAR_EXAMPLE` will be exported as `TF_VAR_example`
 
 ```yaml
 steps:
-  - uses: koyashiro/export-secrets@v0.5.0
+  - uses: koyashiro/export-secrets@v0.5.1
     with:
       secrets: ${{ toJSON(secrets) }}
       downcase-tf-var: true
@@ -33,7 +33,7 @@ For example, a secret like `TF_TOKEN_EXAMPLE_COM` will be exported as `TF_TOKEN_
 
 ```yaml
 steps:
-  - uses: koyashiro/export-secrets@v0.5.0
+  - uses: koyashiro/export-secrets@v0.5.1
     with:
       secrets: ${{ toJSON(secrets) }}
       downcase-tf-token: true
