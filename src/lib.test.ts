@@ -1,5 +1,5 @@
-import { describe, expect, it, vi } from "vitest";
 import type * as core from "@actions/core";
+import { describe, expect, it, vi } from "vitest";
 import { exportSecrets } from "./lib";
 
 describe("exportSecrets()", () => {
