@@ -1,6 +1,6 @@
 {
   "name": "export-secrets",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "description": "Export GitHub Actions secrets as environment variables",
   "keywords": [
     "actions"
