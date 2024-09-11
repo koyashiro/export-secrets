@@ -1,6 +1,10 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:recommended", ":semanticCommits"],
+  "extends": [
+    "config:recommended",
+    ":semanticCommits",
+    "github>aquaproj/aqua-renovate-config#2.3.1"
+  ],
   "automergeType": "pr",
   "automergeStrategy": "squash",
   "lockFileMaintenance": {
