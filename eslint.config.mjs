@@ -1,14 +1,11 @@
-import pluginJs from "@eslint/js";
-import eslintConfigPrettier from "eslint-config-prettier";
+import js from "@eslint/js";
 import globals from "globals";
 import tseslint from "typescript-eslint";
 
-/** @type {import("eslint").Linter.Config[]} */
-export default [
+export default tseslint.config(
   { files: ["**/*.{js,mjs,cjs,ts}"] },
-  { ignores: ["dist/"] },
+  { ignores: ["dist/", "coverage/"] },
   { languageOptions: { globals: globals.node } },
-  pluginJs.configs.recommended,
+  js.configs.recommended,
   ...tseslint.configs.recommended,
-  eslintConfigPrettier,
-];
+);
