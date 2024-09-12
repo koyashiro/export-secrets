@@ -1,12 +1,5 @@
 /* c8 ignore start */
-import * as core from "@actions/core";
-import { exportSecrets } from "./lib";
+import { exportSecrets } from "./export-secrets";
 
-try {
-  exportSecrets(core);
-} catch (error) {
-  core.setFailed(
-    `failed to export secrets: ${error instanceof Error ? error.message : error}`,
-  );
-}
+exportSecrets();
 /* c8 ignore end */
