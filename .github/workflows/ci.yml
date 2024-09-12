@@ -81,42 +81,40 @@ jobs:
       - name: Run export-secrets
         uses: ./
         with:
-          secrets: '{"KEY_A":"VALUE_A","KEY_B":"VALUE_B","KEY_C":"VALUE_C"}'
+          secrets: |
+            {
+              "FOO": "foo",
+              "TF_VAR_FOO": "tf-var-foo",
+              "TF_TOKEN_EXAMPLE_COM": "tf-token-example-com"
+            }
+          downcase-tf-var: true
+          downcase-tf-token: true
       - name: Check environment variables
         run: |
-          EXPECTED_VALUE_KEY_A='VALUE_A'
-          EXPECTED_VALUE_KEY_B='VALUE_B'
-          EXPECTED_VALUE_KEY_C='VALUE_C'
+          FAILED=''
 
-          FAILED='false'
+          assert_env() {
+            local KEY="$1"
+            local EXPECTED="$2"
+            local ACTUAL="${!KEY}"
 
-          if [ "$KEY_A" = "$EXPECTED_VALUE_KEY_A" ]; then
-            echo 'PASSED: VALUE_A'
-          else
-            echo 'FAILED: VALUE_A' 1>&2
-            echo "  expected: $EXPECTED_VALUE_KEY_A" 1>&2
-            echo "  actual: $KEY_A" 1>&2
-            FAILED='true'
-          fi
+            if [[ "$EXPECTED" = "$ACTUAL" ]]; then
+              echo "PASSED: $KEY"
+            else
+              echo "FAILED: $KEY" 1>&2
+              echo "  expected: $EXPECTED" 1>&2
+              echo "  actual: $ACTUAL" 1>&2
+              FAILED='true'
+            fi
+          }
 
-          if [ "$KEY_B" = "$EXPECTED_VALUE_KEY_B" ]; then
-            echo 'PASSED: VALUE_B'
-          else
-            echo 'FAILED: VALUE_B' 1>&2
-            echo "  expected: $EXPECTED_VALUE_KEY_B" 1>&2
-            echo "  actual: $KEY_B" 1>&2
-            FAILED='true'
-          fi
+          assert_env 'FOO' 'foo'
+          assert_env 'TF_VAR_FOO' ''
+          assert_env 'TF_VAR_foo' 'tf-var-foo'
+          assert_env 'TF_TOKEN_EXAMPLE_COM' ''
+          assert_env 'TF_TOKEN_example_com' 'tf-token-example-com'
 
-          if [ "$KEY_C" = "$EXPECTED_VALUE_KEY_C" ]; then
-            echo 'PASSED: VALUE_C'
-          else
-            echo 'FAILED: VALUE_C' 1>&2
-            echo "  expected: $EXPECTED_VALUE_KEY_C" 1>&2
-            echo "  actual: $KEY_C" 1>&2
-            FAILED='true'
-          fi
-
-          if [ "$FAILED" = 'true' ]; then
+          if [[ -n "$FAILED" ]]; then
+            echo "Test failed" 1>&2
             exit 1
           fi

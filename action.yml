@@ -1,5 +1,5 @@
 name: export-secrets
-author: koyashiro <develop@koyashiro.net>
+author: koyashiro
 description: Export GitHub Actions secrets as environment variables
 inputs:
   secrets:
@@ -8,9 +8,11 @@ inputs:
   downcase-tf-var:
     description: Set this option if you want to downcase the secrets starting with `TF_VAR_`
     required: false
+    default: "false"
   downcase-tf-token:
     description: Set this option if you want to downcase the secrets starting with `TF_TOKEN_`
     required: false
+    default: "false"
 runs:
   using: node20
   main: dist/index.js
