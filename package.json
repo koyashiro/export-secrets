@@ -26,7 +26,7 @@
   },
   "dependencies": {
     "@actions/core": "1.10.1",
-    "valibot": "0.41.0"
+    "valibot": "0.42.0"
   },
   "devDependencies": {
     "@eslint/js": "9.10.0",
