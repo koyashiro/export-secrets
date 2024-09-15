@@ -26703,7 +26703,8 @@ function awaitAsync() {
 var BASE64_REGEX = /^(?:[\da-z+/]{4})*(?:[\da-z+/]{2}==|[\da-z+/]{3}=)?$/iu;
 var BIC_REGEX = /^[A-Z]{6}(?!00)[\dA-Z]{2}(?:[\dA-Z]{3})?$/u;
 var CUID2_REGEX = /^[a-z][\da-z]*$/u;
-var DECIMAL_REGEX = /^\d+$/u;
+var DECIMAL_REGEX = /^[+-]?\d+(?:\.\d+)?$/u;
+var DIGITS_REGEX = /^\d+$/u;
 var EMAIL_REGEX = /^[\w+-]+(?:\.[\w+-]+)*@[\da-z]+(?:[.-][\da-z]+)*\.[a-z]{2,}$/iu;
 var EMOJI_REGEX = (
   // eslint-disable-next-line redos-detector/no-unsafe-regex, regexp/no-dupe-disjunctions -- false positives
@@ -27168,6 +27169,25 @@ function description(description_) {
     type: "description",
     reference: description,
     description: description_
+  };
+}
+
+// src/actions/digits/digits.ts
+function digits(message) {
+  return {
+    kind: "validation",
+    type: "digits",
+    reference: digits,
+    async: false,
+    expects: null,
+    requirement: DIGITS_REGEX,
+    message,
+    _run(dataset, config2) {
+      if (dataset.typed && !this.requirement.test(dataset.value)) {
+        _addIssue(this, "digits", dataset, config2);
+      }
+      return dataset;
+    }
   };
 }
 
@@ -27827,6 +27847,16 @@ function maxValue(requirement, message) {
   };
 }
 
+// src/actions/metadata/metadata.ts
+function metadata(metadata_) {
+  return {
+    kind: "metadata",
+    type: "metadata",
+    reference: metadata,
+    metadata: metadata_
+  };
+}
+
 // src/actions/mimeType/mimeType.ts
 function mimeType(requirement, message) {
   return {
@@ -28405,6 +28435,16 @@ function startsWith(requirement, message) {
       }
       return dataset;
     }
+  };
+}
+
+// src/actions/title/title.ts
+function title(title_) {
+  return {
+    kind: "metadata",
+    type: "title",
+    reference: title,
+    title: title_
   };
 }
 
