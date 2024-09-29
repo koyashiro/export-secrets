@@ -26817,7 +26817,6 @@ function _addIssue(context, label, dataset, config2, other) {
     expected,
     received,
     message: `Invalid ${label}: ${expected ? `Expected ${expected} but r` : "R"}eceived ${received}`,
-    // @ts-expect-error
     requirement: context.requirement,
     path: other?.path,
     issues: other?.issues,
@@ -26826,10 +26825,12 @@ function _addIssue(context, label, dataset, config2, other) {
     abortPipeEarly: config2.abortPipeEarly
   };
   const isSchema = context.kind === "schema";
-  const message = other?.message ?? // @ts-expect-error
-  context.message ?? getSpecificMessage(context.reference, issue.lang) ?? (isSchema ? getSchemaMessage(issue.lang) : null) ?? config2.message ?? getGlobalMessage(issue.lang);
+  const message = other?.message ?? context.message ?? getSpecificMessage(context.reference, issue.lang) ?? (isSchema ? getSchemaMessage(issue.lang) : null) ?? config2.message ?? getGlobalMessage(issue.lang);
   if (message) {
-    issue.message = typeof message === "function" ? message(issue) : message;
+    issue.message = typeof message === "function" ? (
+      // @ts-expect-error
+      message(issue)
+    ) : message;
   }
   if (isSchema) {
     dataset.typed = false;
