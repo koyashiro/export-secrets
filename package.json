@@ -25,7 +25,7 @@
     "test": "vitest run --coverage"
   },
   "dependencies": {
-    "@actions/core": "1.11.0",
+    "@actions/core": "1.11.1",
     "valibot": "0.42.1"
   },
   "devDependencies": {
