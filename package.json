@@ -30,7 +30,7 @@
   },
   "devDependencies": {
     "@eslint/js": "9.16.0",
-    "@vercel/ncc": "0.38.2",
+    "@vercel/ncc": "0.38.3",
     "@vitest/coverage-v8": "2.1.6",
     "eslint": "9.16.0",
     "globals": "15.12.0",
