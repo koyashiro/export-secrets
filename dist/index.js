@@ -27413,59 +27413,12 @@ var __webpack_exports__ = {};
 // EXTERNAL MODULE: ./node_modules/@actions/core/lib/core.js
 var core = __nccwpck_require__(7484);
 ;// CONCATENATED MODULE: ./node_modules/valibot/dist/index.js
-// src/actions/await/awaitAsync.ts
-function awaitAsync() {
-  return {
-    kind: "transformation",
-    type: "await",
-    reference: awaitAsync,
-    async: true,
-    async _run(dataset) {
-      dataset.value = await dataset.value;
-      return dataset;
-    }
-  };
-}
-
-// src/regex.ts
-var BASE64_REGEX = /^(?:[\da-z+/]{4})*(?:[\da-z+/]{2}==|[\da-z+/]{3}=)?$/iu;
-var BIC_REGEX = /^[A-Z]{6}(?!00)[\dA-Z]{2}(?:[\dA-Z]{3})?$/u;
-var CUID2_REGEX = /^[a-z][\da-z]*$/u;
-var DECIMAL_REGEX = /^[+-]?\d+(?:\.\d+)?$/u;
-var DIGITS_REGEX = /^\d+$/u;
-var EMAIL_REGEX = /^[\w+-]+(?:\.[\w+-]+)*@[\da-z]+(?:[.-][\da-z]+)*\.[a-z]{2,}$/iu;
-var EMOJI_REGEX = (
-  // eslint-disable-next-line redos-detector/no-unsafe-regex, regexp/no-dupe-disjunctions -- false positives
-  /^(?:[\u{1F1E6}-\u{1F1FF}]{2}|\u{1F3F4}[\u{E0061}-\u{E007A}]{2}[\u{E0030}-\u{E0039}\u{E0061}-\u{E007A}]{1,3}\u{E007F}|(?:\p{Emoji}\uFE0F\u20E3?|\p{Emoji_Modifier_Base}\p{Emoji_Modifier}?|\p{Emoji_Presentation})(?:\u200D(?:\p{Emoji}\uFE0F\u20E3?|\p{Emoji_Modifier_Base}\p{Emoji_Modifier}?|\p{Emoji_Presentation}))*)+$/u
-);
-var HEXADECIMAL_REGEX = /^(?:0[hx])?[\da-f]+$/iu;
-var HEX_COLOR_REGEX = /^#(?:[\da-f]{3,4}|[\da-f]{6}|[\da-f]{8})$/iu;
-var IMEI_REGEX = /^\d{15}$|^\d{2}-\d{6}-\d{6}-\d$/u;
-var IPV4_REGEX = (
-  // eslint-disable-next-line redos-detector/no-unsafe-regex -- false positive
-  /^(?:(?:[1-9]|1\d|2[0-4])?\d|25[0-5])(?:\.(?:(?:[1-9]|1\d|2[0-4])?\d|25[0-5])){3}$/u
-);
-var IPV6_REGEX = /^(?:(?:[\da-f]{1,4}:){7}[\da-f]{1,4}|(?:[\da-f]{1,4}:){1,7}:|(?:[\da-f]{1,4}:){1,6}:[\da-f]{1,4}|(?:[\da-f]{1,4}:){1,5}(?::[\da-f]{1,4}){1,2}|(?:[\da-f]{1,4}:){1,4}(?::[\da-f]{1,4}){1,3}|(?:[\da-f]{1,4}:){1,3}(?::[\da-f]{1,4}){1,4}|(?:[\da-f]{1,4}:){1,2}(?::[\da-f]{1,4}){1,5}|[\da-f]{1,4}:(?::[\da-f]{1,4}){1,6}|:(?:(?::[\da-f]{1,4}){1,7}|:)|fe80:(?::[\da-f]{0,4}){0,4}%[\da-z]+|::(?:f{4}(?::0{1,4})?:)?(?:(?:25[0-5]|(?:2[0-4]|1?\d)?\d)\.){3}(?:25[0-5]|(?:2[0-4]|1?\d)?\d)|(?:[\da-f]{1,4}:){1,4}:(?:(?:25[0-5]|(?:2[0-4]|1?\d)?\d)\.){3}(?:25[0-5]|(?:2[0-4]|1?\d)?\d))$/iu;
-var IP_REGEX = /^(?:(?:[1-9]|1\d|2[0-4])?\d|25[0-5])(?:\.(?:(?:[1-9]|1\d|2[0-4])?\d|25[0-5])){3}$|^(?:(?:[\da-f]{1,4}:){7}[\da-f]{1,4}|(?:[\da-f]{1,4}:){1,7}:|(?:[\da-f]{1,4}:){1,6}:[\da-f]{1,4}|(?:[\da-f]{1,4}:){1,5}(?::[\da-f]{1,4}){1,2}|(?:[\da-f]{1,4}:){1,4}(?::[\da-f]{1,4}){1,3}|(?:[\da-f]{1,4}:){1,3}(?::[\da-f]{1,4}){1,4}|(?:[\da-f]{1,4}:){1,2}(?::[\da-f]{1,4}){1,5}|[\da-f]{1,4}:(?::[\da-f]{1,4}){1,6}|:(?:(?::[\da-f]{1,4}){1,7}|:)|fe80:(?::[\da-f]{0,4}){0,4}%[\da-z]+|::(?:f{4}(?::0{1,4})?:)?(?:(?:25[0-5]|(?:2[0-4]|1?\d)?\d)\.){3}(?:25[0-5]|(?:2[0-4]|1?\d)?\d)|(?:[\da-f]{1,4}:){1,4}:(?:(?:25[0-5]|(?:2[0-4]|1?\d)?\d)\.){3}(?:25[0-5]|(?:2[0-4]|1?\d)?\d))$/iu;
-var ISO_DATE_REGEX = /^\d{4}-(?:0[1-9]|1[0-2])-(?:[12]\d|0[1-9]|3[01])$/u;
-var ISO_DATE_TIME_REGEX = /^\d{4}-(?:0[1-9]|1[0-2])-(?:[12]\d|0[1-9]|3[01])T(?:0\d|1\d|2[0-3]):[0-5]\d$/u;
-var ISO_TIME_REGEX = /^(?:0\d|1\d|2[0-3]):[0-5]\d$/u;
-var ISO_TIME_SECOND_REGEX = /^(?:0\d|1\d|2[0-3])(?::[0-5]\d){2}$/u;
-var ISO_TIMESTAMP_REGEX = /^\d{4}-(?:0[1-9]|1[0-2])-(?:[12]\d|0[1-9]|3[01])T(?:0\d|1\d|2[0-3])(?::[0-5]\d){2}(?:\.\d{1,9})?(?:Z|[+-](?:0\d|1\d|2[0-3])(?::?[0-5]\d)?)$/u;
-var ISO_WEEK_REGEX = /^\d{4}-W(?:0[1-9]|[1-4]\d|5[0-3])$/u;
-var MAC48_REGEX = /^(?:[\da-f]{2}:){5}[\da-f]{2}$|^(?:[\da-f]{2}-){5}[\da-f]{2}$|^(?:[\da-f]{4}\.){2}[\da-f]{4}$/iu;
-var MAC64_REGEX = /^(?:[\da-f]{2}:){7}[\da-f]{2}$|^(?:[\da-f]{2}-){7}[\da-f]{2}$|^(?:[\da-f]{4}\.){3}[\da-f]{4}$|^(?:[\da-f]{4}:){3}[\da-f]{4}$/iu;
-var MAC_REGEX = /^(?:[\da-f]{2}:){5}[\da-f]{2}$|^(?:[\da-f]{2}-){5}[\da-f]{2}$|^(?:[\da-f]{4}\.){2}[\da-f]{4}$|^(?:[\da-f]{2}:){7}[\da-f]{2}$|^(?:[\da-f]{2}-){7}[\da-f]{2}$|^(?:[\da-f]{4}\.){3}[\da-f]{4}$|^(?:[\da-f]{4}:){3}[\da-f]{4}$/iu;
-var NANO_ID_REGEX = /^[\w-]+$/u;
-var OCTAL_REGEX = /^(?:0o)?[0-7]+$/iu;
-var ULID_REGEX = /^[\da-hjkmnp-tv-z]{26}$/iu;
-var UUID_REGEX = /^[\da-f]{8}(?:-[\da-f]{4}){3}-[\da-f]{12}$/iu;
-
 // src/storages/globalConfig/globalConfig.ts
 var store;
 function setGlobalConfig(config2) {
   store = { ...store, ...config2 };
 }
+// @__NO_SIDE_EFFECTS__
 function getGlobalConfig(config2) {
   return {
     lang: config2?.lang ?? store?.lang,
@@ -27484,6 +27437,7 @@ function setGlobalMessage(message, lang) {
   if (!store2) store2 = /* @__PURE__ */ new Map();
   store2.set(lang, message);
 }
+// @__NO_SIDE_EFFECTS__
 function getGlobalMessage(lang) {
   return store2?.get(lang);
 }
@@ -27497,6 +27451,7 @@ function setSchemaMessage(message, lang) {
   if (!store3) store3 = /* @__PURE__ */ new Map();
   store3.set(lang, message);
 }
+// @__NO_SIDE_EFFECTS__
 function getSchemaMessage(lang) {
   return store3?.get(lang);
 }
@@ -27511,6 +27466,7 @@ function setSpecificMessage(reference, message, lang) {
   if (!store4.get(reference)) store4.set(reference, /* @__PURE__ */ new Map());
   store4.get(reference).set(lang, message);
 }
+// @__NO_SIDE_EFFECTS__
 function getSpecificMessage(reference, lang) {
   return store4?.get(reference)?.get(lang);
 }
@@ -27519,6 +27475,7 @@ function deleteSpecificMessage(reference, lang) {
 }
 
 // src/utils/_stringify/_stringify.ts
+// @__NO_SIDE_EFFECTS__
 function _stringify(input) {
   const type = typeof input;
   if (type === "string") {
@@ -27554,7 +27511,7 @@ function _addIssue(context, label, dataset, config2, other) {
   };
   const isSchema = context.kind === "schema";
   const message = other?.message ?? context.message ?? getSpecificMessage(context.reference, issue.lang) ?? (isSchema ? getSchemaMessage(issue.lang) : null) ?? config2.message ?? getGlobalMessage(issue.lang);
-  if (message) {
+  if (message !== void 0) {
     issue.message = typeof message === "function" ? (
       // @ts-expect-error
       message(issue)
@@ -27570,8 +27527,66 @@ function _addIssue(context, label, dataset, config2, other) {
   }
 }
 
+// src/utils/_getByteCount/_getByteCount.ts
+var textEncoder;
+// @__NO_SIDE_EFFECTS__
+function _getByteCount(input) {
+  if (!textEncoder) {
+    textEncoder = new TextEncoder();
+  }
+  return textEncoder.encode(input).length;
+}
+
+// src/utils/_getGraphemeCount/_getGraphemeCount.ts
+var segmenter;
+// @__NO_SIDE_EFFECTS__
+function _getGraphemeCount(input) {
+  if (!segmenter) {
+    segmenter = new Intl.Segmenter();
+  }
+  const segments = segmenter.segment(input);
+  let count = 0;
+  for (const _ of segments) {
+    count++;
+  }
+  return count;
+}
+
+// src/utils/_getStandardProps/_getStandardProps.ts
+// @__NO_SIDE_EFFECTS__
+function _getStandardProps(context) {
+  return {
+    version: 1,
+    vendor: "valibot",
+    validate(value2) {
+      return context["~run"]({ value: value2 }, getGlobalConfig());
+    }
+  };
+}
+
+// src/utils/_getWordCount/_getWordCount.ts
+var store5;
+// @__NO_SIDE_EFFECTS__
+function _getWordCount(locales, input) {
+  if (!store5) {
+    store5 = /* @__PURE__ */ new Map();
+  }
+  if (!store5.get(locales)) {
+    store5.set(locales, new Intl.Segmenter(locales, { granularity: "word" }));
+  }
+  const segments = store5.get(locales).segment(input);
+  let count = 0;
+  for (const segment of segments) {
+    if (segment.isWordLike) {
+      count++;
+    }
+  }
+  return count;
+}
+
 // src/utils/_isLuhnAlgo/_isLuhnAlgo.ts
 var NON_DIGIT_REGEX = /\D/gu;
+// @__NO_SIDE_EFFECTS__
 function _isLuhnAlgo(input) {
   const number2 = input.replace(NON_DIGIT_REGEX, "");
   let length2 = number2.length;
@@ -27586,13 +27601,15 @@ function _isLuhnAlgo(input) {
 }
 
 // src/utils/_isValidObjectKey/_isValidObjectKey.ts
+// @__NO_SIDE_EFFECTS__
 function _isValidObjectKey(object2, key) {
   return Object.hasOwn(object2, key) && key !== "__proto__" && key !== "prototype" && key !== "constructor";
 }
 
 // src/utils/_joinExpects/_joinExpects.ts
-function _joinExpects(values, separator) {
-  const list = [...new Set(values)];
+// @__NO_SIDE_EFFECTS__
+function _joinExpects(values2, separator) {
+  const list = [...new Set(values2)];
   if (list.length > 1) {
     return `(${list.join(` ${separator} `)})`;
   }
@@ -27600,6 +27617,7 @@ function _joinExpects(values, separator) {
 }
 
 // src/utils/entriesFromList/entriesFromList.ts
+// @__NO_SIDE_EFFECTS__
 function entriesFromList(list, schema) {
   const entries = {};
   for (const key of list) {
@@ -27608,7 +27626,18 @@ function entriesFromList(list, schema) {
   return entries;
 }
 
+// src/utils/entriesFromObjects/entriesFromObjects.ts
+// @__NO_SIDE_EFFECTS__
+function entriesFromObjects(schemas) {
+  const entries = {};
+  for (const schema of schemas) {
+    Object.assign(entries, schema.entries);
+  }
+  return entries;
+}
+
 // src/utils/getDotPath/getDotPath.ts
+// @__NO_SIDE_EFFECTS__
 function getDotPath(issue) {
   if (issue.path) {
     let key = "";
@@ -27629,26 +27658,25 @@ function getDotPath(issue) {
 }
 
 // src/utils/isOfKind/isOfKind.ts
+// @__NO_SIDE_EFFECTS__
 function isOfKind(kind, object2) {
   return object2.kind === kind;
 }
 
 // src/utils/isOfType/isOfType.ts
+// @__NO_SIDE_EFFECTS__
 function isOfType(type, object2) {
   return object2.type === type;
 }
 
 // src/utils/isValiError/isValiError.ts
+// @__NO_SIDE_EFFECTS__
 function isValiError(error) {
   return error instanceof ValiError;
 }
 
 // src/utils/ValiError/ValiError.ts
 var ValiError = class extends Error {
-  /**
-   * The error issues.
-   */
-  issues;
   /**
    * Creates a Valibot error with useful information.
    *
@@ -27661,7 +27689,108 @@ var ValiError = class extends Error {
   }
 };
 
+// src/actions/args/args.ts
+// @__NO_SIDE_EFFECTS__
+function args(schema) {
+  return {
+    kind: "transformation",
+    type: "args",
+    reference: args,
+    async: false,
+    schema,
+    "~run"(dataset, config2) {
+      const func = dataset.value;
+      dataset.value = (...args_) => {
+        const argsDataset = this.schema["~run"]({ value: args_ }, config2);
+        if (argsDataset.issues) {
+          throw new ValiError(argsDataset.issues);
+        }
+        return func(...argsDataset.value);
+      };
+      return dataset;
+    }
+  };
+}
+
+// src/actions/args/argsAsync.ts
+// @__NO_SIDE_EFFECTS__
+function argsAsync(schema) {
+  return {
+    kind: "transformation",
+    type: "args",
+    reference: argsAsync,
+    async: false,
+    schema,
+    "~run"(dataset, config2) {
+      const func = dataset.value;
+      dataset.value = async (...args2) => {
+        const argsDataset = await schema["~run"]({ value: args2 }, config2);
+        if (argsDataset.issues) {
+          throw new ValiError(argsDataset.issues);
+        }
+        return func(...argsDataset.value);
+      };
+      return dataset;
+    }
+  };
+}
+
+// src/actions/await/awaitAsync.ts
+// @__NO_SIDE_EFFECTS__
+function awaitAsync() {
+  return {
+    kind: "transformation",
+    type: "await",
+    reference: awaitAsync,
+    async: true,
+    async "~run"(dataset) {
+      dataset.value = await dataset.value;
+      return dataset;
+    }
+  };
+}
+
+// src/regex.ts
+var BASE64_REGEX = /^(?:[\da-z+/]{4})*(?:[\da-z+/]{2}==|[\da-z+/]{3}=)?$/iu;
+var BIC_REGEX = /^[A-Z]{6}(?!00)[\dA-Z]{2}(?:[\dA-Z]{3})?$/u;
+var CUID2_REGEX = /^[a-z][\da-z]*$/u;
+var DECIMAL_REGEX = /^[+-]?(?:\d*\.)?\d+$/u;
+var DIGITS_REGEX = /^\d+$/u;
+var EMAIL_REGEX = /^[\w+-]+(?:\.[\w+-]+)*@[\da-z]+(?:[.-][\da-z]+)*\.[a-z]{2,}$/iu;
+var EMOJI_REGEX = (
+  // eslint-disable-next-line redos-detector/no-unsafe-regex, regexp/no-dupe-disjunctions -- false positives
+  /^(?:[\u{1F1E6}-\u{1F1FF}]{2}|\u{1F3F4}[\u{E0061}-\u{E007A}]{2}[\u{E0030}-\u{E0039}\u{E0061}-\u{E007A}]{1,3}\u{E007F}|(?:\p{Emoji}\uFE0F\u20E3?|\p{Emoji_Modifier_Base}\p{Emoji_Modifier}?|\p{Emoji_Presentation})(?:\u200D(?:\p{Emoji}\uFE0F\u20E3?|\p{Emoji_Modifier_Base}\p{Emoji_Modifier}?|\p{Emoji_Presentation}))*)+$/u
+);
+var HEXADECIMAL_REGEX = /^(?:0[hx])?[\da-fA-F]+$/u;
+var HEX_COLOR_REGEX = /^#(?:[\da-fA-F]{3,4}|[\da-fA-F]{6}|[\da-fA-F]{8})$/u;
+var IMEI_REGEX = /^\d{15}$|^\d{2}-\d{6}-\d{6}-\d$/u;
+var IPV4_REGEX = (
+  // eslint-disable-next-line redos-detector/no-unsafe-regex -- false positive
+  /^(?:(?:[1-9]|1\d|2[0-4])?\d|25[0-5])(?:\.(?:(?:[1-9]|1\d|2[0-4])?\d|25[0-5])){3}$/u
+);
+var IPV6_REGEX = /^(?:(?:[\da-f]{1,4}:){7}[\da-f]{1,4}|(?:[\da-f]{1,4}:){1,7}:|(?:[\da-f]{1,4}:){1,6}:[\da-f]{1,4}|(?:[\da-f]{1,4}:){1,5}(?::[\da-f]{1,4}){1,2}|(?:[\da-f]{1,4}:){1,4}(?::[\da-f]{1,4}){1,3}|(?:[\da-f]{1,4}:){1,3}(?::[\da-f]{1,4}){1,4}|(?:[\da-f]{1,4}:){1,2}(?::[\da-f]{1,4}){1,5}|[\da-f]{1,4}:(?::[\da-f]{1,4}){1,6}|:(?:(?::[\da-f]{1,4}){1,7}|:)|fe80:(?::[\da-f]{0,4}){0,4}%[\da-z]+|::(?:f{4}(?::0{1,4})?:)?(?:(?:25[0-5]|(?:2[0-4]|1?\d)?\d)\.){3}(?:25[0-5]|(?:2[0-4]|1?\d)?\d)|(?:[\da-f]{1,4}:){1,4}:(?:(?:25[0-5]|(?:2[0-4]|1?\d)?\d)\.){3}(?:25[0-5]|(?:2[0-4]|1?\d)?\d))$/iu;
+var IP_REGEX = /^(?:(?:[1-9]|1\d|2[0-4])?\d|25[0-5])(?:\.(?:(?:[1-9]|1\d|2[0-4])?\d|25[0-5])){3}$|^(?:(?:[\da-f]{1,4}:){7}[\da-f]{1,4}|(?:[\da-f]{1,4}:){1,7}:|(?:[\da-f]{1,4}:){1,6}:[\da-f]{1,4}|(?:[\da-f]{1,4}:){1,5}(?::[\da-f]{1,4}){1,2}|(?:[\da-f]{1,4}:){1,4}(?::[\da-f]{1,4}){1,3}|(?:[\da-f]{1,4}:){1,3}(?::[\da-f]{1,4}){1,4}|(?:[\da-f]{1,4}:){1,2}(?::[\da-f]{1,4}){1,5}|[\da-f]{1,4}:(?::[\da-f]{1,4}){1,6}|:(?:(?::[\da-f]{1,4}){1,7}|:)|fe80:(?::[\da-f]{0,4}){0,4}%[\da-z]+|::(?:f{4}(?::0{1,4})?:)?(?:(?:25[0-5]|(?:2[0-4]|1?\d)?\d)\.){3}(?:25[0-5]|(?:2[0-4]|1?\d)?\d)|(?:[\da-f]{1,4}:){1,4}:(?:(?:25[0-5]|(?:2[0-4]|1?\d)?\d)\.){3}(?:25[0-5]|(?:2[0-4]|1?\d)?\d))$/iu;
+var ISO_DATE_REGEX = /^\d{4}-(?:0[1-9]|1[0-2])-(?:[12]\d|0[1-9]|3[01])$/u;
+var ISO_DATE_TIME_REGEX = /^\d{4}-(?:0[1-9]|1[0-2])-(?:[12]\d|0[1-9]|3[01])[T ](?:0\d|1\d|2[0-3]):[0-5]\d$/u;
+var ISO_TIME_REGEX = /^(?:0\d|1\d|2[0-3]):[0-5]\d$/u;
+var ISO_TIME_SECOND_REGEX = /^(?:0\d|1\d|2[0-3])(?::[0-5]\d){2}$/u;
+var ISO_TIMESTAMP_REGEX = /^\d{4}-(?:0[1-9]|1[0-2])-(?:[12]\d|0[1-9]|3[01])[T ](?:0\d|1\d|2[0-3])(?::[0-5]\d){2}(?:\.\d{1,9})?(?:Z|[+-](?:0\d|1\d|2[0-3])(?::?[0-5]\d)?)$/u;
+var ISO_WEEK_REGEX = /^\d{4}-W(?:0[1-9]|[1-4]\d|5[0-3])$/u;
+var MAC48_REGEX = /^(?:[\da-f]{2}:){5}[\da-f]{2}$|^(?:[\da-f]{2}-){5}[\da-f]{2}$|^(?:[\da-f]{4}\.){2}[\da-f]{4}$/iu;
+var MAC64_REGEX = /^(?:[\da-f]{2}:){7}[\da-f]{2}$|^(?:[\da-f]{2}-){7}[\da-f]{2}$|^(?:[\da-f]{4}\.){3}[\da-f]{4}$|^(?:[\da-f]{4}:){3}[\da-f]{4}$/iu;
+var MAC_REGEX = /^(?:[\da-f]{2}:){5}[\da-f]{2}$|^(?:[\da-f]{2}-){5}[\da-f]{2}$|^(?:[\da-f]{4}\.){2}[\da-f]{4}$|^(?:[\da-f]{2}:){7}[\da-f]{2}$|^(?:[\da-f]{2}-){7}[\da-f]{2}$|^(?:[\da-f]{4}\.){3}[\da-f]{4}$|^(?:[\da-f]{4}:){3}[\da-f]{4}$/iu;
+var NANO_ID_REGEX = /^[\w-]+$/u;
+var OCTAL_REGEX = /^(?:0o)?[0-7]+$/u;
+var RFC_EMAIL_REGEX = (
+  // eslint-disable-next-line regexp/prefer-w, no-useless-escape, regexp/no-useless-escape, regexp/require-unicode-regexp
+  /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/
+);
+var SLUG_REGEX = /^[\da-z]+(?:[-_][\da-z]+)*$/u;
+var ULID_REGEX = /^[\da-hjkmnp-tv-zA-HJKMNP-TV-Z]{26}$/u;
+var UUID_REGEX = /^[\da-f]{8}(?:-[\da-f]{4}){3}-[\da-f]{12}$/iu;
+
 // src/actions/base64/base64.ts
+// @__NO_SIDE_EFFECTS__
 function base64(message) {
   return {
     kind: "validation",
@@ -27671,7 +27800,7 @@ function base64(message) {
     expects: null,
     requirement: BASE64_REGEX,
     message,
-    _run(dataset, config2) {
+    "~run"(dataset, config2) {
       if (dataset.typed && !this.requirement.test(dataset.value)) {
         _addIssue(this, "Base64", dataset, config2);
       }
@@ -27681,6 +27810,7 @@ function base64(message) {
 }
 
 // src/actions/bic/bic.ts
+// @__NO_SIDE_EFFECTS__
 function bic(message) {
   return {
     kind: "validation",
@@ -27690,7 +27820,7 @@ function bic(message) {
     expects: null,
     requirement: BIC_REGEX,
     message,
-    _run(dataset, config2) {
+    "~run"(dataset, config2) {
       if (dataset.typed && !this.requirement.test(dataset.value)) {
         _addIssue(this, "BIC", dataset, config2);
       }
@@ -27700,6 +27830,7 @@ function bic(message) {
 }
 
 // src/actions/brand/brand.ts
+// @__NO_SIDE_EFFECTS__
 function brand(name) {
   return {
     kind: "transformation",
@@ -27707,13 +27838,14 @@ function brand(name) {
     reference: brand,
     async: false,
     name,
-    _run(dataset) {
+    "~run"(dataset) {
       return dataset;
     }
   };
 }
 
 // src/actions/bytes/bytes.ts
+// @__NO_SIDE_EFFECTS__
 function bytes(requirement, message) {
   return {
     kind: "validation",
@@ -27723,9 +27855,9 @@ function bytes(requirement, message) {
     expects: `${requirement}`,
     requirement,
     message,
-    _run(dataset, config2) {
+    "~run"(dataset, config2) {
       if (dataset.typed) {
-        const length2 = new TextEncoder().encode(dataset.value).length;
+        const length2 = _getByteCount(dataset.value);
         if (length2 !== this.requirement) {
           _addIssue(this, "bytes", dataset, config2, {
             received: `${length2}`
@@ -27738,6 +27870,7 @@ function bytes(requirement, message) {
 }
 
 // src/actions/check/check.ts
+// @__NO_SIDE_EFFECTS__
 function check(requirement, message) {
   return {
     kind: "validation",
@@ -27747,7 +27880,7 @@ function check(requirement, message) {
     expects: null,
     requirement,
     message,
-    _run(dataset, config2) {
+    "~run"(dataset, config2) {
       if (dataset.typed && !this.requirement(dataset.value)) {
         _addIssue(this, "input", dataset, config2);
       }
@@ -27757,6 +27890,7 @@ function check(requirement, message) {
 }
 
 // src/actions/check/checkAsync.ts
+// @__NO_SIDE_EFFECTS__
 function checkAsync(requirement, message) {
   return {
     kind: "validation",
@@ -27766,7 +27900,7 @@ function checkAsync(requirement, message) {
     expects: null,
     requirement,
     message,
-    async _run(dataset, config2) {
+    async "~run"(dataset, config2) {
       if (dataset.typed && !await this.requirement(dataset.value)) {
         _addIssue(this, "input", dataset, config2);
       }
@@ -27776,6 +27910,7 @@ function checkAsync(requirement, message) {
 }
 
 // src/actions/checkItems/checkItems.ts
+// @__NO_SIDE_EFFECTS__
 function checkItems(requirement, message) {
   return {
     kind: "validation",
@@ -27785,11 +27920,50 @@ function checkItems(requirement, message) {
     expects: null,
     requirement,
     message,
-    _run(dataset, config2) {
+    "~run"(dataset, config2) {
       if (dataset.typed) {
         for (let index = 0; index < dataset.value.length; index++) {
           const item = dataset.value[index];
           if (!this.requirement(item, index, dataset.value)) {
+            _addIssue(this, "item", dataset, config2, {
+              input: item,
+              path: [
+                {
+                  type: "array",
+                  origin: "value",
+                  input: dataset.value,
+                  key: index,
+                  value: item
+                }
+              ]
+            });
+          }
+        }
+      }
+      return dataset;
+    }
+  };
+}
+
+// src/actions/checkItems/checkItemsAsync.ts
+// @__NO_SIDE_EFFECTS__
+function checkItemsAsync(requirement, message) {
+  return {
+    kind: "validation",
+    type: "check_items",
+    reference: checkItemsAsync,
+    async: true,
+    expects: null,
+    requirement,
+    message,
+    async "~run"(dataset, config2) {
+      if (dataset.typed) {
+        const requirementResults = await Promise.all(
+          dataset.value.map(this.requirement)
+        );
+        for (let index = 0; index < dataset.value.length; index++) {
+          if (!requirementResults[index]) {
+            const item = dataset.value[index];
             _addIssue(this, "item", dataset, config2, {
               input: item,
               path: [
@@ -27823,12 +27997,14 @@ var PROVIDER_REGEX_LIST = (/* unused pure expression or super */ null && ([
   // JCB
   /^(?:2131|1800|35\d{3})\d{11}$/u,
   // Mastercard
+  // eslint-disable-next-line redos-detector/no-unsafe-regex
   /^5[1-5]\d{2}|(?:222\d|22[3-9]\d|2[3-6]\d{2}|27[01]\d|2720)\d{12}$/u,
   // UnionPay
   /^(?:6[27]\d{14,17}|81\d{14,17})$/u,
   // Visa
   /^4\d{12}(?:\d{3,6})?$/u
 ]));
+// @__NO_SIDE_EFFECTS__
 function creditCard(message) {
   return {
     kind: "validation",
@@ -27844,7 +28020,7 @@ function creditCard(message) {
       _isLuhnAlgo(sanitized);
     },
     message,
-    _run(dataset, config2) {
+    "~run"(dataset, config2) {
       if (dataset.typed && !this.requirement(dataset.value)) {
         _addIssue(this, "credit card", dataset, config2);
       }
@@ -27854,6 +28030,7 @@ function creditCard(message) {
 }
 
 // src/actions/cuid2/cuid2.ts
+// @__NO_SIDE_EFFECTS__
 function cuid2(message) {
   return {
     kind: "validation",
@@ -27863,7 +28040,7 @@ function cuid2(message) {
     expects: null,
     requirement: CUID2_REGEX,
     message,
-    _run(dataset, config2) {
+    "~run"(dataset, config2) {
       if (dataset.typed && !this.requirement.test(dataset.value)) {
         _addIssue(this, "Cuid2", dataset, config2);
       }
@@ -27873,6 +28050,7 @@ function cuid2(message) {
 }
 
 // src/actions/decimal/decimal.ts
+// @__NO_SIDE_EFFECTS__
 function decimal(message) {
   return {
     kind: "validation",
@@ -27882,7 +28060,7 @@ function decimal(message) {
     expects: null,
     requirement: DECIMAL_REGEX,
     message,
-    _run(dataset, config2) {
+    "~run"(dataset, config2) {
       if (dataset.typed && !this.requirement.test(dataset.value)) {
         _addIssue(this, "decimal", dataset, config2);
       }
@@ -27892,6 +28070,7 @@ function decimal(message) {
 }
 
 // src/actions/description/description.ts
+// @__NO_SIDE_EFFECTS__
 function description(description_) {
   return {
     kind: "metadata",
@@ -27902,6 +28081,7 @@ function description(description_) {
 }
 
 // src/actions/digits/digits.ts
+// @__NO_SIDE_EFFECTS__
 function digits(message) {
   return {
     kind: "validation",
@@ -27911,7 +28091,7 @@ function digits(message) {
     expects: null,
     requirement: DIGITS_REGEX,
     message,
-    _run(dataset, config2) {
+    "~run"(dataset, config2) {
       if (dataset.typed && !this.requirement.test(dataset.value)) {
         _addIssue(this, "digits", dataset, config2);
       }
@@ -27921,6 +28101,7 @@ function digits(message) {
 }
 
 // src/actions/email/email.ts
+// @__NO_SIDE_EFFECTS__
 function email(message) {
   return {
     kind: "validation",
@@ -27930,7 +28111,7 @@ function email(message) {
     async: false,
     requirement: EMAIL_REGEX,
     message,
-    _run(dataset, config2) {
+    "~run"(dataset, config2) {
       if (dataset.typed && !this.requirement.test(dataset.value)) {
         _addIssue(this, "email", dataset, config2);
       }
@@ -27940,6 +28121,7 @@ function email(message) {
 }
 
 // src/actions/emoji/emoji.ts
+// @__NO_SIDE_EFFECTS__
 function emoji(message) {
   return {
     kind: "validation",
@@ -27949,7 +28131,7 @@ function emoji(message) {
     expects: null,
     requirement: EMOJI_REGEX,
     message,
-    _run(dataset, config2) {
+    "~run"(dataset, config2) {
       if (dataset.typed && !this.requirement.test(dataset.value)) {
         _addIssue(this, "emoji", dataset, config2);
       }
@@ -27959,6 +28141,7 @@ function emoji(message) {
 }
 
 // src/actions/empty/empty.ts
+// @__NO_SIDE_EFFECTS__
 function empty(message) {
   return {
     kind: "validation",
@@ -27967,7 +28150,7 @@ function empty(message) {
     async: false,
     expects: "0",
     message,
-    _run(dataset, config2) {
+    "~run"(dataset, config2) {
       if (dataset.typed && dataset.value.length > 0) {
         _addIssue(this, "length", dataset, config2, {
           received: `${dataset.value.length}`
@@ -27979,6 +28162,7 @@ function empty(message) {
 }
 
 // src/actions/endsWith/endsWith.ts
+// @__NO_SIDE_EFFECTS__
 function endsWith(requirement, message) {
   return {
     kind: "validation",
@@ -27988,7 +28172,7 @@ function endsWith(requirement, message) {
     expects: `"${requirement}"`,
     requirement,
     message,
-    _run(dataset, config2) {
+    "~run"(dataset, config2) {
       if (dataset.typed && !dataset.value.endsWith(this.requirement)) {
         _addIssue(this, "end", dataset, config2, {
           received: `"${dataset.value.slice(-this.requirement.length)}"`
@@ -28000,6 +28184,7 @@ function endsWith(requirement, message) {
 }
 
 // src/actions/everyItem/everyItem.ts
+// @__NO_SIDE_EFFECTS__
 function everyItem(requirement, message) {
   return {
     kind: "validation",
@@ -28009,7 +28194,7 @@ function everyItem(requirement, message) {
     expects: null,
     requirement,
     message,
-    _run(dataset, config2) {
+    "~run"(dataset, config2) {
       if (dataset.typed && !dataset.value.every(this.requirement)) {
         _addIssue(this, "item", dataset, config2);
       }
@@ -28019,6 +28204,7 @@ function everyItem(requirement, message) {
 }
 
 // src/actions/excludes/excludes.ts
+// @__NO_SIDE_EFFECTS__
 function excludes(requirement, message) {
   const received = _stringify(requirement);
   return {
@@ -28029,7 +28215,7 @@ function excludes(requirement, message) {
     expects: `!${received}`,
     requirement,
     message,
-    _run(dataset, config2) {
+    "~run"(dataset, config2) {
       if (dataset.typed && dataset.value.includes(this.requirement)) {
         _addIssue(this, "content", dataset, config2, { received });
       }
@@ -28039,6 +28225,7 @@ function excludes(requirement, message) {
 }
 
 // src/actions/filterItems/filterItems.ts
+// @__NO_SIDE_EFFECTS__
 function filterItems(operation) {
   return {
     kind: "transformation",
@@ -28046,7 +28233,7 @@ function filterItems(operation) {
     reference: filterItems,
     async: false,
     operation,
-    _run(dataset) {
+    "~run"(dataset) {
       dataset.value = dataset.value.filter(this.operation);
       return dataset;
     }
@@ -28054,6 +28241,7 @@ function filterItems(operation) {
 }
 
 // src/actions/findItem/findItem.ts
+// @__NO_SIDE_EFFECTS__
 function findItem(operation) {
   return {
     kind: "transformation",
@@ -28061,7 +28249,7 @@ function findItem(operation) {
     reference: findItem,
     async: false,
     operation,
-    _run(dataset) {
+    "~run"(dataset) {
       dataset.value = dataset.value.find(this.operation);
       return dataset;
     }
@@ -28069,6 +28257,7 @@ function findItem(operation) {
 }
 
 // src/actions/finite/finite.ts
+// @__NO_SIDE_EFFECTS__
 function finite(message) {
   return {
     kind: "validation",
@@ -28078,9 +28267,56 @@ function finite(message) {
     expects: null,
     requirement: Number.isFinite,
     message,
-    _run(dataset, config2) {
+    "~run"(dataset, config2) {
       if (dataset.typed && !this.requirement(dataset.value)) {
         _addIssue(this, "finite", dataset, config2);
+      }
+      return dataset;
+    }
+  };
+}
+
+// src/actions/graphemes/graphemes.ts
+// @__NO_SIDE_EFFECTS__
+function graphemes(requirement, message) {
+  return {
+    kind: "validation",
+    type: "graphemes",
+    reference: graphemes,
+    async: false,
+    expects: `${requirement}`,
+    requirement,
+    message,
+    "~run"(dataset, config2) {
+      if (dataset.typed) {
+        const count = _getGraphemeCount(dataset.value);
+        if (count !== this.requirement) {
+          _addIssue(this, "graphemes", dataset, config2, {
+            received: `${count}`
+          });
+        }
+      }
+      return dataset;
+    }
+  };
+}
+
+// src/actions/gtValue/gtValue.ts
+// @__NO_SIDE_EFFECTS__
+function gtValue(requirement, message) {
+  return {
+    kind: "validation",
+    type: "gt_value",
+    reference: gtValue,
+    async: false,
+    expects: `>${requirement instanceof Date ? requirement.toJSON() : _stringify(requirement)}`,
+    requirement,
+    message,
+    "~run"(dataset, config2) {
+      if (dataset.typed && !(dataset.value > this.requirement)) {
+        _addIssue(this, "value", dataset, config2, {
+          received: dataset.value instanceof Date ? dataset.value.toJSON() : _stringify(dataset.value)
+        });
       }
       return dataset;
     }
@@ -28104,6 +28340,7 @@ var HASH_LENGTHS = {
   crc32b: 8,
   adler32: 8
 };
+// @__NO_SIDE_EFFECTS__
 function hash(types, message) {
   return {
     kind: "validation",
@@ -28116,7 +28353,7 @@ function hash(types, message) {
       "iu"
     ),
     message,
-    _run(dataset, config2) {
+    "~run"(dataset, config2) {
       if (dataset.typed && !this.requirement.test(dataset.value)) {
         _addIssue(this, "hash", dataset, config2);
       }
@@ -28126,6 +28363,7 @@ function hash(types, message) {
 }
 
 // src/actions/hexadecimal/hexadecimal.ts
+// @__NO_SIDE_EFFECTS__
 function hexadecimal(message) {
   return {
     kind: "validation",
@@ -28135,7 +28373,7 @@ function hexadecimal(message) {
     expects: null,
     requirement: HEXADECIMAL_REGEX,
     message,
-    _run(dataset, config2) {
+    "~run"(dataset, config2) {
       if (dataset.typed && !this.requirement.test(dataset.value)) {
         _addIssue(this, "hexadecimal", dataset, config2);
       }
@@ -28145,6 +28383,7 @@ function hexadecimal(message) {
 }
 
 // src/actions/hexColor/hexColor.ts
+// @__NO_SIDE_EFFECTS__
 function hexColor(message) {
   return {
     kind: "validation",
@@ -28154,7 +28393,7 @@ function hexColor(message) {
     expects: null,
     requirement: HEX_COLOR_REGEX,
     message,
-    _run(dataset, config2) {
+    "~run"(dataset, config2) {
       if (dataset.typed && !this.requirement.test(dataset.value)) {
         _addIssue(this, "hex color", dataset, config2);
       }
@@ -28164,6 +28403,7 @@ function hexColor(message) {
 }
 
 // src/actions/imei/imei.ts
+// @__NO_SIDE_EFFECTS__
 function imei(message) {
   return {
     kind: "validation",
@@ -28175,7 +28415,7 @@ function imei(message) {
       return IMEI_REGEX.test(input) && _isLuhnAlgo(input);
     },
     message,
-    _run(dataset, config2) {
+    "~run"(dataset, config2) {
       if (dataset.typed && !this.requirement(dataset.value)) {
         _addIssue(this, "IMEI", dataset, config2);
       }
@@ -28185,6 +28425,7 @@ function imei(message) {
 }
 
 // src/actions/includes/includes.ts
+// @__NO_SIDE_EFFECTS__
 function includes(requirement, message) {
   const expects = _stringify(requirement);
   return {
@@ -28195,7 +28436,7 @@ function includes(requirement, message) {
     expects,
     requirement,
     message,
-    _run(dataset, config2) {
+    "~run"(dataset, config2) {
       if (dataset.typed && !dataset.value.includes(this.requirement)) {
         _addIssue(this, "content", dataset, config2, {
           received: `!${expects}`
@@ -28207,6 +28448,7 @@ function includes(requirement, message) {
 }
 
 // src/actions/integer/integer.ts
+// @__NO_SIDE_EFFECTS__
 function integer(message) {
   return {
     kind: "validation",
@@ -28216,7 +28458,7 @@ function integer(message) {
     expects: null,
     requirement: Number.isInteger,
     message,
-    _run(dataset, config2) {
+    "~run"(dataset, config2) {
       if (dataset.typed && !this.requirement(dataset.value)) {
         _addIssue(this, "integer", dataset, config2);
       }
@@ -28226,6 +28468,7 @@ function integer(message) {
 }
 
 // src/actions/ip/ip.ts
+// @__NO_SIDE_EFFECTS__
 function ip(message) {
   return {
     kind: "validation",
@@ -28235,7 +28478,7 @@ function ip(message) {
     expects: null,
     requirement: IP_REGEX,
     message,
-    _run(dataset, config2) {
+    "~run"(dataset, config2) {
       if (dataset.typed && !this.requirement.test(dataset.value)) {
         _addIssue(this, "IP", dataset, config2);
       }
@@ -28245,6 +28488,7 @@ function ip(message) {
 }
 
 // src/actions/ipv4/ipv4.ts
+// @__NO_SIDE_EFFECTS__
 function ipv4(message) {
   return {
     kind: "validation",
@@ -28254,7 +28498,7 @@ function ipv4(message) {
     expects: null,
     requirement: IPV4_REGEX,
     message,
-    _run(dataset, config2) {
+    "~run"(dataset, config2) {
       if (dataset.typed && !this.requirement.test(dataset.value)) {
         _addIssue(this, "IPv4", dataset, config2);
       }
@@ -28264,6 +28508,7 @@ function ipv4(message) {
 }
 
 // src/actions/ipv6/ipv6.ts
+// @__NO_SIDE_EFFECTS__
 function ipv6(message) {
   return {
     kind: "validation",
@@ -28273,7 +28518,7 @@ function ipv6(message) {
     expects: null,
     requirement: IPV6_REGEX,
     message,
-    _run(dataset, config2) {
+    "~run"(dataset, config2) {
       if (dataset.typed && !this.requirement.test(dataset.value)) {
         _addIssue(this, "IPv6", dataset, config2);
       }
@@ -28283,6 +28528,7 @@ function ipv6(message) {
 }
 
 // src/actions/isoDate/isoDate.ts
+// @__NO_SIDE_EFFECTS__
 function isoDate(message) {
   return {
     kind: "validation",
@@ -28292,7 +28538,7 @@ function isoDate(message) {
     expects: null,
     requirement: ISO_DATE_REGEX,
     message,
-    _run(dataset, config2) {
+    "~run"(dataset, config2) {
       if (dataset.typed && !this.requirement.test(dataset.value)) {
         _addIssue(this, "date", dataset, config2);
       }
@@ -28302,6 +28548,7 @@ function isoDate(message) {
 }
 
 // src/actions/isoDateTime/isoDateTime.ts
+// @__NO_SIDE_EFFECTS__
 function isoDateTime(message) {
   return {
     kind: "validation",
@@ -28311,7 +28558,7 @@ function isoDateTime(message) {
     expects: null,
     requirement: ISO_DATE_TIME_REGEX,
     message,
-    _run(dataset, config2) {
+    "~run"(dataset, config2) {
       if (dataset.typed && !this.requirement.test(dataset.value)) {
         _addIssue(this, "date-time", dataset, config2);
       }
@@ -28321,6 +28568,7 @@ function isoDateTime(message) {
 }
 
 // src/actions/isoTime/isoTime.ts
+// @__NO_SIDE_EFFECTS__
 function isoTime(message) {
   return {
     kind: "validation",
@@ -28330,7 +28578,7 @@ function isoTime(message) {
     expects: null,
     requirement: ISO_TIME_REGEX,
     message,
-    _run(dataset, config2) {
+    "~run"(dataset, config2) {
       if (dataset.typed && !this.requirement.test(dataset.value)) {
         _addIssue(this, "time", dataset, config2);
       }
@@ -28340,6 +28588,7 @@ function isoTime(message) {
 }
 
 // src/actions/isoTimeSecond/isoTimeSecond.ts
+// @__NO_SIDE_EFFECTS__
 function isoTimeSecond(message) {
   return {
     kind: "validation",
@@ -28349,7 +28598,7 @@ function isoTimeSecond(message) {
     expects: null,
     requirement: ISO_TIME_SECOND_REGEX,
     message,
-    _run(dataset, config2) {
+    "~run"(dataset, config2) {
       if (dataset.typed && !this.requirement.test(dataset.value)) {
         _addIssue(this, "time-second", dataset, config2);
       }
@@ -28359,6 +28608,7 @@ function isoTimeSecond(message) {
 }
 
 // src/actions/isoTimestamp/isoTimestamp.ts
+// @__NO_SIDE_EFFECTS__
 function isoTimestamp(message) {
   return {
     kind: "validation",
@@ -28368,7 +28618,7 @@ function isoTimestamp(message) {
     expects: null,
     requirement: ISO_TIMESTAMP_REGEX,
     message,
-    _run(dataset, config2) {
+    "~run"(dataset, config2) {
       if (dataset.typed && !this.requirement.test(dataset.value)) {
         _addIssue(this, "timestamp", dataset, config2);
       }
@@ -28378,6 +28628,7 @@ function isoTimestamp(message) {
 }
 
 // src/actions/isoWeek/isoWeek.ts
+// @__NO_SIDE_EFFECTS__
 function isoWeek(message) {
   return {
     kind: "validation",
@@ -28387,7 +28638,7 @@ function isoWeek(message) {
     expects: null,
     requirement: ISO_WEEK_REGEX,
     message,
-    _run(dataset, config2) {
+    "~run"(dataset, config2) {
       if (dataset.typed && !this.requirement.test(dataset.value)) {
         _addIssue(this, "week", dataset, config2);
       }
@@ -28397,6 +28648,7 @@ function isoWeek(message) {
 }
 
 // src/actions/length/length.ts
+// @__NO_SIDE_EFFECTS__
 function dist_length(requirement, message) {
   return {
     kind: "validation",
@@ -28406,7 +28658,7 @@ function dist_length(requirement, message) {
     expects: `${requirement}`,
     requirement,
     message,
-    _run(dataset, config2) {
+    "~run"(dataset, config2) {
       if (dataset.typed && dataset.value.length !== this.requirement) {
         _addIssue(this, "length", dataset, config2, {
           received: `${dataset.value.length}`
@@ -28417,7 +28669,30 @@ function dist_length(requirement, message) {
   };
 }
 
+// src/actions/ltValue/ltValue.ts
+// @__NO_SIDE_EFFECTS__
+function ltValue(requirement, message) {
+  return {
+    kind: "validation",
+    type: "lt_value",
+    reference: ltValue,
+    async: false,
+    expects: `<${requirement instanceof Date ? requirement.toJSON() : _stringify(requirement)}`,
+    requirement,
+    message,
+    "~run"(dataset, config2) {
+      if (dataset.typed && !(dataset.value < this.requirement)) {
+        _addIssue(this, "value", dataset, config2, {
+          received: dataset.value instanceof Date ? dataset.value.toJSON() : _stringify(dataset.value)
+        });
+      }
+      return dataset;
+    }
+  };
+}
+
 // src/actions/mac/mac.ts
+// @__NO_SIDE_EFFECTS__
 function mac(message) {
   return {
     kind: "validation",
@@ -28427,7 +28702,7 @@ function mac(message) {
     expects: null,
     requirement: MAC_REGEX,
     message,
-    _run(dataset, config2) {
+    "~run"(dataset, config2) {
       if (dataset.typed && !this.requirement.test(dataset.value)) {
         _addIssue(this, "MAC", dataset, config2);
       }
@@ -28437,6 +28712,7 @@ function mac(message) {
 }
 
 // src/actions/mac48/mac48.ts
+// @__NO_SIDE_EFFECTS__
 function mac48(message) {
   return {
     kind: "validation",
@@ -28446,7 +28722,7 @@ function mac48(message) {
     expects: null,
     requirement: MAC48_REGEX,
     message,
-    _run(dataset, config2) {
+    "~run"(dataset, config2) {
       if (dataset.typed && !this.requirement.test(dataset.value)) {
         _addIssue(this, "48-bit MAC", dataset, config2);
       }
@@ -28456,6 +28732,7 @@ function mac48(message) {
 }
 
 // src/actions/mac64/mac64.ts
+// @__NO_SIDE_EFFECTS__
 function mac64(message) {
   return {
     kind: "validation",
@@ -28465,7 +28742,7 @@ function mac64(message) {
     expects: null,
     requirement: MAC64_REGEX,
     message,
-    _run(dataset, config2) {
+    "~run"(dataset, config2) {
       if (dataset.typed && !this.requirement.test(dataset.value)) {
         _addIssue(this, "64-bit MAC", dataset, config2);
       }
@@ -28475,6 +28752,7 @@ function mac64(message) {
 }
 
 // src/actions/mapItems/mapItems.ts
+// @__NO_SIDE_EFFECTS__
 function mapItems(operation) {
   return {
     kind: "transformation",
@@ -28482,7 +28760,7 @@ function mapItems(operation) {
     reference: mapItems,
     async: false,
     operation,
-    _run(dataset) {
+    "~run"(dataset) {
       dataset.value = dataset.value.map(this.operation);
       return dataset;
     }
@@ -28490,6 +28768,7 @@ function mapItems(operation) {
 }
 
 // src/actions/maxBytes/maxBytes.ts
+// @__NO_SIDE_EFFECTS__
 function maxBytes(requirement, message) {
   return {
     kind: "validation",
@@ -28499,9 +28778,9 @@ function maxBytes(requirement, message) {
     expects: `<=${requirement}`,
     requirement,
     message,
-    _run(dataset, config2) {
+    "~run"(dataset, config2) {
       if (dataset.typed) {
-        const length2 = new TextEncoder().encode(dataset.value).length;
+        const length2 = _getByteCount(dataset.value);
         if (length2 > this.requirement) {
           _addIssue(this, "bytes", dataset, config2, {
             received: `${length2}`
@@ -28513,7 +28792,33 @@ function maxBytes(requirement, message) {
   };
 }
 
+// src/actions/maxGraphemes/maxGraphemes.ts
+// @__NO_SIDE_EFFECTS__
+function maxGraphemes(requirement, message) {
+  return {
+    kind: "validation",
+    type: "max_graphemes",
+    reference: maxGraphemes,
+    async: false,
+    expects: `<=${requirement}`,
+    requirement,
+    message,
+    "~run"(dataset, config2) {
+      if (dataset.typed) {
+        const count = _getGraphemeCount(dataset.value);
+        if (count > this.requirement) {
+          _addIssue(this, "graphemes", dataset, config2, {
+            received: `${count}`
+          });
+        }
+      }
+      return dataset;
+    }
+  };
+}
+
 // src/actions/maxLength/maxLength.ts
+// @__NO_SIDE_EFFECTS__
 function maxLength(requirement, message) {
   return {
     kind: "validation",
@@ -28523,7 +28828,7 @@ function maxLength(requirement, message) {
     expects: `<=${requirement}`,
     requirement,
     message,
-    _run(dataset, config2) {
+    "~run"(dataset, config2) {
       if (dataset.typed && dataset.value.length > this.requirement) {
         _addIssue(this, "length", dataset, config2, {
           received: `${dataset.value.length}`
@@ -28535,6 +28840,7 @@ function maxLength(requirement, message) {
 }
 
 // src/actions/maxSize/maxSize.ts
+// @__NO_SIDE_EFFECTS__
 function maxSize(requirement, message) {
   return {
     kind: "validation",
@@ -28544,7 +28850,7 @@ function maxSize(requirement, message) {
     expects: `<=${requirement}`,
     requirement,
     message,
-    _run(dataset, config2) {
+    "~run"(dataset, config2) {
       if (dataset.typed && dataset.value.size > this.requirement) {
         _addIssue(this, "size", dataset, config2, {
           received: `${dataset.value.size}`
@@ -28556,6 +28862,7 @@ function maxSize(requirement, message) {
 }
 
 // src/actions/maxValue/maxValue.ts
+// @__NO_SIDE_EFFECTS__
 function maxValue(requirement, message) {
   return {
     kind: "validation",
@@ -28565,8 +28872,8 @@ function maxValue(requirement, message) {
     expects: `<=${requirement instanceof Date ? requirement.toJSON() : _stringify(requirement)}`,
     requirement,
     message,
-    _run(dataset, config2) {
-      if (dataset.typed && dataset.value > this.requirement) {
+    "~run"(dataset, config2) {
+      if (dataset.typed && !(dataset.value <= this.requirement)) {
         _addIssue(this, "value", dataset, config2, {
           received: dataset.value instanceof Date ? dataset.value.toJSON() : _stringify(dataset.value)
         });
@@ -28576,7 +28883,34 @@ function maxValue(requirement, message) {
   };
 }
 
+// src/actions/maxWords/maxWords.ts
+// @__NO_SIDE_EFFECTS__
+function maxWords(locales, requirement, message) {
+  return {
+    kind: "validation",
+    type: "max_words",
+    reference: maxWords,
+    async: false,
+    expects: `<=${requirement}`,
+    locales,
+    requirement,
+    message,
+    "~run"(dataset, config2) {
+      if (dataset.typed) {
+        const count = _getWordCount(this.locales, dataset.value);
+        if (count > this.requirement) {
+          _addIssue(this, "words", dataset, config2, {
+            received: `${count}`
+          });
+        }
+      }
+      return dataset;
+    }
+  };
+}
+
 // src/actions/metadata/metadata.ts
+// @__NO_SIDE_EFFECTS__
 function metadata(metadata_) {
   return {
     kind: "metadata",
@@ -28587,6 +28921,7 @@ function metadata(metadata_) {
 }
 
 // src/actions/mimeType/mimeType.ts
+// @__NO_SIDE_EFFECTS__
 function mimeType(requirement, message) {
   return {
     kind: "validation",
@@ -28599,7 +28934,7 @@ function mimeType(requirement, message) {
     ),
     requirement,
     message,
-    _run(dataset, config2) {
+    "~run"(dataset, config2) {
       if (dataset.typed && !this.requirement.includes(dataset.value.type)) {
         _addIssue(this, "MIME type", dataset, config2, {
           received: `"${dataset.value.type}"`
@@ -28611,6 +28946,7 @@ function mimeType(requirement, message) {
 }
 
 // src/actions/minBytes/minBytes.ts
+// @__NO_SIDE_EFFECTS__
 function minBytes(requirement, message) {
   return {
     kind: "validation",
@@ -28620,9 +28956,9 @@ function minBytes(requirement, message) {
     expects: `>=${requirement}`,
     requirement,
     message,
-    _run(dataset, config2) {
+    "~run"(dataset, config2) {
       if (dataset.typed) {
-        const length2 = new TextEncoder().encode(dataset.value).length;
+        const length2 = _getByteCount(dataset.value);
         if (length2 < this.requirement) {
           _addIssue(this, "bytes", dataset, config2, {
             received: `${length2}`
@@ -28634,7 +28970,33 @@ function minBytes(requirement, message) {
   };
 }
 
+// src/actions/minGraphemes/minGraphemes.ts
+// @__NO_SIDE_EFFECTS__
+function minGraphemes(requirement, message) {
+  return {
+    kind: "validation",
+    type: "min_graphemes",
+    reference: minGraphemes,
+    async: false,
+    expects: `>=${requirement}`,
+    requirement,
+    message,
+    "~run"(dataset, config2) {
+      if (dataset.typed) {
+        const count = _getGraphemeCount(dataset.value);
+        if (count < this.requirement) {
+          _addIssue(this, "graphemes", dataset, config2, {
+            received: `${count}`
+          });
+        }
+      }
+      return dataset;
+    }
+  };
+}
+
 // src/actions/minLength/minLength.ts
+// @__NO_SIDE_EFFECTS__
 function minLength(requirement, message) {
   return {
     kind: "validation",
@@ -28644,7 +29006,7 @@ function minLength(requirement, message) {
     expects: `>=${requirement}`,
     requirement,
     message,
-    _run(dataset, config2) {
+    "~run"(dataset, config2) {
       if (dataset.typed && dataset.value.length < this.requirement) {
         _addIssue(this, "length", dataset, config2, {
           received: `${dataset.value.length}`
@@ -28656,6 +29018,7 @@ function minLength(requirement, message) {
 }
 
 // src/actions/minSize/minSize.ts
+// @__NO_SIDE_EFFECTS__
 function minSize(requirement, message) {
   return {
     kind: "validation",
@@ -28665,7 +29028,7 @@ function minSize(requirement, message) {
     expects: `>=${requirement}`,
     requirement,
     message,
-    _run(dataset, config2) {
+    "~run"(dataset, config2) {
       if (dataset.typed && dataset.value.size < this.requirement) {
         _addIssue(this, "size", dataset, config2, {
           received: `${dataset.value.size}`
@@ -28677,6 +29040,7 @@ function minSize(requirement, message) {
 }
 
 // src/actions/minValue/minValue.ts
+// @__NO_SIDE_EFFECTS__
 function minValue(requirement, message) {
   return {
     kind: "validation",
@@ -28686,8 +29050,8 @@ function minValue(requirement, message) {
     expects: `>=${requirement instanceof Date ? requirement.toJSON() : _stringify(requirement)}`,
     requirement,
     message,
-    _run(dataset, config2) {
-      if (dataset.typed && dataset.value < this.requirement) {
+    "~run"(dataset, config2) {
+      if (dataset.typed && !(dataset.value >= this.requirement)) {
         _addIssue(this, "value", dataset, config2, {
           received: dataset.value instanceof Date ? dataset.value.toJSON() : _stringify(dataset.value)
         });
@@ -28697,7 +29061,34 @@ function minValue(requirement, message) {
   };
 }
 
+// src/actions/minWords/minWords.ts
+// @__NO_SIDE_EFFECTS__
+function minWords(locales, requirement, message) {
+  return {
+    kind: "validation",
+    type: "min_words",
+    reference: minWords,
+    async: false,
+    expects: `>=${requirement}`,
+    locales,
+    requirement,
+    message,
+    "~run"(dataset, config2) {
+      if (dataset.typed) {
+        const count = _getWordCount(this.locales, dataset.value);
+        if (count < this.requirement) {
+          _addIssue(this, "words", dataset, config2, {
+            received: `${count}`
+          });
+        }
+      }
+      return dataset;
+    }
+  };
+}
+
 // src/actions/multipleOf/multipleOf.ts
+// @__NO_SIDE_EFFECTS__
 function multipleOf(requirement, message) {
   return {
     kind: "validation",
@@ -28707,7 +29098,7 @@ function multipleOf(requirement, message) {
     expects: `%${requirement}`,
     requirement,
     message,
-    _run(dataset, config2) {
+    "~run"(dataset, config2) {
       if (dataset.typed && dataset.value % this.requirement !== 0) {
         _addIssue(this, "multiple", dataset, config2);
       }
@@ -28717,6 +29108,7 @@ function multipleOf(requirement, message) {
 }
 
 // src/actions/nanoid/nanoid.ts
+// @__NO_SIDE_EFFECTS__
 function nanoid(message) {
   return {
     kind: "validation",
@@ -28726,7 +29118,7 @@ function nanoid(message) {
     expects: null,
     requirement: NANO_ID_REGEX,
     message,
-    _run(dataset, config2) {
+    "~run"(dataset, config2) {
       if (dataset.typed && !this.requirement.test(dataset.value)) {
         _addIssue(this, "Nano ID", dataset, config2);
       }
@@ -28736,6 +29128,7 @@ function nanoid(message) {
 }
 
 // src/actions/nonEmpty/nonEmpty.ts
+// @__NO_SIDE_EFFECTS__
 function nonEmpty(message) {
   return {
     kind: "validation",
@@ -28744,7 +29137,7 @@ function nonEmpty(message) {
     async: false,
     expects: "!0",
     message,
-    _run(dataset, config2) {
+    "~run"(dataset, config2) {
       if (dataset.typed && dataset.value.length === 0) {
         _addIssue(this, "length", dataset, config2, {
           received: "0"
@@ -28756,6 +29149,7 @@ function nonEmpty(message) {
 }
 
 // src/actions/normalize/normalize.ts
+// @__NO_SIDE_EFFECTS__
 function normalize(form) {
   return {
     kind: "transformation",
@@ -28763,7 +29157,7 @@ function normalize(form) {
     reference: normalize,
     async: false,
     form,
-    _run(dataset) {
+    "~run"(dataset) {
       dataset.value = dataset.value.normalize(this.form);
       return dataset;
     }
@@ -28771,6 +29165,7 @@ function normalize(form) {
 }
 
 // src/actions/notBytes/notBytes.ts
+// @__NO_SIDE_EFFECTS__
 function notBytes(requirement, message) {
   return {
     kind: "validation",
@@ -28780,9 +29175,9 @@ function notBytes(requirement, message) {
     expects: `!${requirement}`,
     requirement,
     message,
-    _run(dataset, config2) {
+    "~run"(dataset, config2) {
       if (dataset.typed) {
-        const length2 = new TextEncoder().encode(dataset.value).length;
+        const length2 = _getByteCount(dataset.value);
         if (length2 === this.requirement) {
           _addIssue(this, "bytes", dataset, config2, {
             received: `${length2}`
@@ -28794,7 +29189,33 @@ function notBytes(requirement, message) {
   };
 }
 
+// src/actions/notGraphemes/notGraphemes.ts
+// @__NO_SIDE_EFFECTS__
+function notGraphemes(requirement, message) {
+  return {
+    kind: "validation",
+    type: "not_graphemes",
+    reference: notGraphemes,
+    async: false,
+    expects: `!${requirement}`,
+    requirement,
+    message,
+    "~run"(dataset, config2) {
+      if (dataset.typed) {
+        const count = _getGraphemeCount(dataset.value);
+        if (count === this.requirement) {
+          _addIssue(this, "graphemes", dataset, config2, {
+            received: `${count}`
+          });
+        }
+      }
+      return dataset;
+    }
+  };
+}
+
 // src/actions/notLength/notLength.ts
+// @__NO_SIDE_EFFECTS__
 function notLength(requirement, message) {
   return {
     kind: "validation",
@@ -28804,7 +29225,7 @@ function notLength(requirement, message) {
     expects: `!${requirement}`,
     requirement,
     message,
-    _run(dataset, config2) {
+    "~run"(dataset, config2) {
       if (dataset.typed && dataset.value.length === this.requirement) {
         _addIssue(this, "length", dataset, config2, {
           received: `${dataset.value.length}`
@@ -28816,6 +29237,7 @@ function notLength(requirement, message) {
 }
 
 // src/actions/notSize/notSize.ts
+// @__NO_SIDE_EFFECTS__
 function notSize(requirement, message) {
   return {
     kind: "validation",
@@ -28825,7 +29247,7 @@ function notSize(requirement, message) {
     expects: `!${requirement}`,
     requirement,
     message,
-    _run(dataset, config2) {
+    "~run"(dataset, config2) {
       if (dataset.typed && dataset.value.size === this.requirement) {
         _addIssue(this, "size", dataset, config2, {
           received: `${dataset.value.size}`
@@ -28837,6 +29259,7 @@ function notSize(requirement, message) {
 }
 
 // src/actions/notValue/notValue.ts
+// @__NO_SIDE_EFFECTS__
 function notValue(requirement, message) {
   return {
     kind: "validation",
@@ -28846,7 +29269,7 @@ function notValue(requirement, message) {
     expects: requirement instanceof Date ? `!${requirement.toJSON()}` : `!${_stringify(requirement)}`,
     requirement,
     message,
-    _run(dataset, config2) {
+    "~run"(dataset, config2) {
       if (dataset.typed && this.requirement <= dataset.value && this.requirement >= dataset.value) {
         _addIssue(this, "value", dataset, config2, {
           received: dataset.value instanceof Date ? dataset.value.toJSON() : _stringify(dataset.value)
@@ -28857,7 +29280,63 @@ function notValue(requirement, message) {
   };
 }
 
+// src/actions/notValues/notValues.ts
+// @__NO_SIDE_EFFECTS__
+function notValues(requirement, message) {
+  return {
+    kind: "validation",
+    type: "not_values",
+    reference: notValues,
+    async: false,
+    expects: `!${_joinExpects(
+      requirement.map(
+        (value2) => value2 instanceof Date ? value2.toJSON() : _stringify(value2)
+      ),
+      "|"
+    )}`,
+    requirement,
+    message,
+    "~run"(dataset, config2) {
+      if (dataset.typed && this.requirement.some(
+        (value2) => value2 <= dataset.value && value2 >= dataset.value
+      )) {
+        _addIssue(this, "value", dataset, config2, {
+          received: dataset.value instanceof Date ? dataset.value.toJSON() : _stringify(dataset.value)
+        });
+      }
+      return dataset;
+    }
+  };
+}
+
+// src/actions/notWords/notWords.ts
+// @__NO_SIDE_EFFECTS__
+function notWords(locales, requirement, message) {
+  return {
+    kind: "validation",
+    type: "not_words",
+    reference: notWords,
+    async: false,
+    expects: `!${requirement}`,
+    locales,
+    requirement,
+    message,
+    "~run"(dataset, config2) {
+      if (dataset.typed) {
+        const count = _getWordCount(this.locales, dataset.value);
+        if (count === this.requirement) {
+          _addIssue(this, "words", dataset, config2, {
+            received: `${count}`
+          });
+        }
+      }
+      return dataset;
+    }
+  };
+}
+
 // src/actions/octal/octal.ts
+// @__NO_SIDE_EFFECTS__
 function octal(message) {
   return {
     kind: "validation",
@@ -28867,7 +29346,7 @@ function octal(message) {
     expects: null,
     requirement: OCTAL_REGEX,
     message,
-    _run(dataset, config2) {
+    "~run"(dataset, config2) {
       if (dataset.typed && !this.requirement.test(dataset.value)) {
         _addIssue(this, "octal", dataset, config2);
       }
@@ -28877,14 +29356,19 @@ function octal(message) {
 }
 
 // src/actions/partialCheck/utils/_isPartiallyTyped/_isPartiallyTyped.ts
-function _isPartiallyTyped(dataset, pathList) {
+// @__NO_SIDE_EFFECTS__
+function _isPartiallyTyped(dataset, paths) {
   if (dataset.issues) {
-    for (const path of pathList) {
+    for (const path of paths) {
       for (const issue of dataset.issues) {
         let typed = false;
         const bound = Math.min(path.length, issue.path?.length ?? 0);
         for (let index = 0; index < bound; index++) {
-          if (path[index] !== issue.path[index].key) {
+          if (
+            // @ts-expect-error
+            path[index] !== issue.path[index].key && // @ts-expect-error
+            (path[index] !== "$" || issue.path[index].type !== "array")
+          ) {
             typed = true;
             break;
           }
@@ -28899,17 +29383,19 @@ function _isPartiallyTyped(dataset, pathList) {
 }
 
 // src/actions/partialCheck/partialCheck.ts
-function partialCheck(pathList, requirement, message) {
+// @__NO_SIDE_EFFECTS__
+function partialCheck(paths, requirement, message) {
   return {
     kind: "validation",
     type: "partial_check",
     reference: partialCheck,
     async: false,
     expects: null,
+    paths,
     requirement,
     message,
-    _run(dataset, config2) {
-      if (_isPartiallyTyped(dataset, pathList) && // @ts-expect-error
+    "~run"(dataset, config2) {
+      if ((dataset.typed || _isPartiallyTyped(dataset, paths)) && // @ts-expect-error
       !this.requirement(dataset.value)) {
         _addIssue(this, "input", dataset, config2);
       }
@@ -28919,17 +29405,19 @@ function partialCheck(pathList, requirement, message) {
 }
 
 // src/actions/partialCheck/partialCheckAsync.ts
-function partialCheckAsync(pathList, requirement, message) {
+// @__NO_SIDE_EFFECTS__
+function partialCheckAsync(paths, requirement, message) {
   return {
     kind: "validation",
     type: "partial_check",
     reference: partialCheckAsync,
     async: true,
     expects: null,
+    paths,
     requirement,
     message,
-    async _run(dataset, config2) {
-      if (_isPartiallyTyped(dataset, pathList) && // @ts-expect-error
+    async "~run"(dataset, config2) {
+      if ((dataset.typed || _isPartiallyTyped(dataset, paths)) && // @ts-expect-error
       !await this.requirement(dataset.value)) {
         _addIssue(this, "input", dataset, config2);
       }
@@ -28939,6 +29427,7 @@ function partialCheckAsync(pathList, requirement, message) {
 }
 
 // src/actions/rawCheck/rawCheck.ts
+// @__NO_SIDE_EFFECTS__
 function rawCheck(action) {
   return {
     kind: "validation",
@@ -28946,7 +29435,7 @@ function rawCheck(action) {
     reference: rawCheck,
     async: false,
     expects: null,
-    _run(dataset, config2) {
+    "~run"(dataset, config2) {
       action({
         dataset,
         config: config2,
@@ -28958,6 +29447,7 @@ function rawCheck(action) {
 }
 
 // src/actions/rawCheck/rawCheckAsync.ts
+// @__NO_SIDE_EFFECTS__
 function rawCheckAsync(action) {
   return {
     kind: "validation",
@@ -28965,7 +29455,7 @@ function rawCheckAsync(action) {
     reference: rawCheckAsync,
     async: true,
     expects: null,
-    async _run(dataset, config2) {
+    async "~run"(dataset, config2) {
       await action({
         dataset,
         config: config2,
@@ -28977,13 +29467,14 @@ function rawCheckAsync(action) {
 }
 
 // src/actions/rawTransform/rawTransform.ts
+// @__NO_SIDE_EFFECTS__
 function rawTransform(action) {
   return {
     kind: "transformation",
     type: "raw_transform",
     reference: rawTransform,
     async: false,
-    _run(dataset, config2) {
+    "~run"(dataset, config2) {
       const output = action({
         dataset,
         config: config2,
@@ -29001,13 +29492,14 @@ function rawTransform(action) {
 }
 
 // src/actions/rawTransform/rawTransformAsync.ts
+// @__NO_SIDE_EFFECTS__
 function rawTransformAsync(action) {
   return {
     kind: "transformation",
     type: "raw_transform",
     reference: rawTransformAsync,
     async: true,
-    async _run(dataset, config2) {
+    async "~run"(dataset, config2) {
       const output = await action({
         dataset,
         config: config2,
@@ -29025,19 +29517,21 @@ function rawTransformAsync(action) {
 }
 
 // src/actions/readonly/readonly.ts
+// @__NO_SIDE_EFFECTS__
 function readonly() {
   return {
     kind: "transformation",
     type: "readonly",
     reference: readonly,
     async: false,
-    _run(dataset) {
+    "~run"(dataset) {
       return dataset;
     }
   };
 }
 
 // src/actions/reduceItems/reduceItems.ts
+// @__NO_SIDE_EFFECTS__
 function reduceItems(operation, initial) {
   return {
     kind: "transformation",
@@ -29046,7 +29540,7 @@ function reduceItems(operation, initial) {
     async: false,
     operation,
     initial,
-    _run(dataset) {
+    "~run"(dataset) {
       dataset.value = dataset.value.reduce(this.operation, this.initial);
       return dataset;
     }
@@ -29054,6 +29548,7 @@ function reduceItems(operation, initial) {
 }
 
 // src/actions/regex/regex.ts
+// @__NO_SIDE_EFFECTS__
 function regex(requirement, message) {
   return {
     kind: "validation",
@@ -29063,7 +29558,7 @@ function regex(requirement, message) {
     expects: `${requirement}`,
     requirement,
     message,
-    _run(dataset, config2) {
+    "~run"(dataset, config2) {
       if (dataset.typed && !this.requirement.test(dataset.value)) {
         _addIssue(this, "format", dataset, config2);
       }
@@ -29072,7 +29567,80 @@ function regex(requirement, message) {
   };
 }
 
+// src/actions/returns/returns.ts
+// @__NO_SIDE_EFFECTS__
+function returns(schema) {
+  return {
+    kind: "transformation",
+    type: "returns",
+    reference: returns,
+    async: false,
+    schema,
+    "~run"(dataset, config2) {
+      const func = dataset.value;
+      dataset.value = (...args_) => {
+        const returnsDataset = this.schema["~run"](
+          { value: func(...args_) },
+          config2
+        );
+        if (returnsDataset.issues) {
+          throw new ValiError(returnsDataset.issues);
+        }
+        return returnsDataset.value;
+      };
+      return dataset;
+    }
+  };
+}
+
+// src/actions/returns/returnsAsync.ts
+// @__NO_SIDE_EFFECTS__
+function returnsAsync(schema) {
+  return {
+    kind: "transformation",
+    type: "returns",
+    reference: returnsAsync,
+    async: false,
+    schema,
+    "~run"(dataset, config2) {
+      const func = dataset.value;
+      dataset.value = async (...args_) => {
+        const returnsDataset = await this.schema["~run"](
+          { value: await func(...args_) },
+          config2
+        );
+        if (returnsDataset.issues) {
+          throw new ValiError(returnsDataset.issues);
+        }
+        return returnsDataset.value;
+      };
+      return dataset;
+    }
+  };
+}
+
+// src/actions/rfcEmail/rfcEmail.ts
+// @__NO_SIDE_EFFECTS__
+function rfcEmail(message) {
+  return {
+    kind: "validation",
+    type: "rfc_email",
+    reference: rfcEmail,
+    expects: null,
+    async: false,
+    requirement: RFC_EMAIL_REGEX,
+    message,
+    "~run"(dataset, config2) {
+      if (dataset.typed && !this.requirement.test(dataset.value)) {
+        _addIssue(this, "email", dataset, config2);
+      }
+      return dataset;
+    }
+  };
+}
+
 // src/actions/safeInteger/safeInteger.ts
+// @__NO_SIDE_EFFECTS__
 function safeInteger(message) {
   return {
     kind: "validation",
@@ -29082,7 +29650,7 @@ function safeInteger(message) {
     expects: null,
     requirement: Number.isSafeInteger,
     message,
-    _run(dataset, config2) {
+    "~run"(dataset, config2) {
       if (dataset.typed && !this.requirement(dataset.value)) {
         _addIssue(this, "safe integer", dataset, config2);
       }
@@ -29092,6 +29660,7 @@ function safeInteger(message) {
 }
 
 // src/actions/size/size.ts
+// @__NO_SIDE_EFFECTS__
 function size(requirement, message) {
   return {
     kind: "validation",
@@ -29101,7 +29670,7 @@ function size(requirement, message) {
     expects: `${requirement}`,
     requirement,
     message,
-    _run(dataset, config2) {
+    "~run"(dataset, config2) {
       if (dataset.typed && dataset.value.size !== this.requirement) {
         _addIssue(this, "size", dataset, config2, {
           received: `${dataset.value.size}`
@@ -29112,7 +29681,28 @@ function size(requirement, message) {
   };
 }
 
+// src/actions/slug/slug.ts
+// @__NO_SIDE_EFFECTS__
+function slug(message) {
+  return {
+    kind: "validation",
+    type: "slug",
+    reference: slug,
+    async: false,
+    expects: null,
+    requirement: SLUG_REGEX,
+    message,
+    "~run"(dataset, config2) {
+      if (dataset.typed && !this.requirement.test(dataset.value)) {
+        _addIssue(this, "slug", dataset, config2);
+      }
+      return dataset;
+    }
+  };
+}
+
 // src/actions/someItem/someItem.ts
+// @__NO_SIDE_EFFECTS__
 function someItem(requirement, message) {
   return {
     kind: "validation",
@@ -29122,7 +29712,7 @@ function someItem(requirement, message) {
     expects: null,
     requirement,
     message,
-    _run(dataset, config2) {
+    "~run"(dataset, config2) {
       if (dataset.typed && !dataset.value.some(this.requirement)) {
         _addIssue(this, "item", dataset, config2);
       }
@@ -29132,6 +29722,7 @@ function someItem(requirement, message) {
 }
 
 // src/actions/sortItems/sortItems.ts
+// @__NO_SIDE_EFFECTS__
 function sortItems(operation) {
   return {
     kind: "transformation",
@@ -29139,7 +29730,7 @@ function sortItems(operation) {
     reference: sortItems,
     async: false,
     operation,
-    _run(dataset) {
+    "~run"(dataset) {
       dataset.value = dataset.value.sort(this.operation);
       return dataset;
     }
@@ -29147,6 +29738,7 @@ function sortItems(operation) {
 }
 
 // src/actions/startsWith/startsWith.ts
+// @__NO_SIDE_EFFECTS__
 function startsWith(requirement, message) {
   return {
     kind: "validation",
@@ -29156,7 +29748,7 @@ function startsWith(requirement, message) {
     expects: `"${requirement}"`,
     requirement,
     message,
-    _run(dataset, config2) {
+    "~run"(dataset, config2) {
       if (dataset.typed && !dataset.value.startsWith(this.requirement)) {
         _addIssue(this, "start", dataset, config2, {
           received: `"${dataset.value.slice(0, this.requirement.length)}"`
@@ -29168,6 +29760,7 @@ function startsWith(requirement, message) {
 }
 
 // src/actions/title/title.ts
+// @__NO_SIDE_EFFECTS__
 function title(title_) {
   return {
     kind: "metadata",
@@ -29178,13 +29771,14 @@ function title(title_) {
 }
 
 // src/actions/toLowerCase/toLowerCase.ts
+// @__NO_SIDE_EFFECTS__
 function toLowerCase() {
   return {
     kind: "transformation",
     type: "to_lower_case",
     reference: toLowerCase,
     async: false,
-    _run(dataset) {
+    "~run"(dataset) {
       dataset.value = dataset.value.toLowerCase();
       return dataset;
     }
@@ -29192,6 +29786,7 @@ function toLowerCase() {
 }
 
 // src/actions/toMaxValue/toMaxValue.ts
+// @__NO_SIDE_EFFECTS__
 function toMaxValue(requirement) {
   return {
     kind: "transformation",
@@ -29199,7 +29794,7 @@ function toMaxValue(requirement) {
     reference: toMaxValue,
     async: false,
     requirement,
-    _run(dataset) {
+    "~run"(dataset) {
       dataset.value = dataset.value > this.requirement ? this.requirement : dataset.value;
       return dataset;
     }
@@ -29207,6 +29802,7 @@ function toMaxValue(requirement) {
 }
 
 // src/actions/toMinValue/toMinValue.ts
+// @__NO_SIDE_EFFECTS__
 function toMinValue(requirement) {
   return {
     kind: "transformation",
@@ -29214,7 +29810,7 @@ function toMinValue(requirement) {
     reference: toMinValue,
     async: false,
     requirement,
-    _run(dataset) {
+    "~run"(dataset) {
       dataset.value = dataset.value < this.requirement ? this.requirement : dataset.value;
       return dataset;
     }
@@ -29222,13 +29818,14 @@ function toMinValue(requirement) {
 }
 
 // src/actions/toUpperCase/toUpperCase.ts
+// @__NO_SIDE_EFFECTS__
 function toUpperCase() {
   return {
     kind: "transformation",
     type: "to_upper_case",
     reference: toUpperCase,
     async: false,
-    _run(dataset) {
+    "~run"(dataset) {
       dataset.value = dataset.value.toUpperCase();
       return dataset;
     }
@@ -29236,6 +29833,7 @@ function toUpperCase() {
 }
 
 // src/actions/transform/transform.ts
+// @__NO_SIDE_EFFECTS__
 function transform(operation) {
   return {
     kind: "transformation",
@@ -29243,7 +29841,7 @@ function transform(operation) {
     reference: transform,
     async: false,
     operation,
-    _run(dataset) {
+    "~run"(dataset) {
       dataset.value = this.operation(dataset.value);
       return dataset;
     }
@@ -29251,6 +29849,7 @@ function transform(operation) {
 }
 
 // src/actions/transform/transformAsync.ts
+// @__NO_SIDE_EFFECTS__
 function transformAsync(operation) {
   return {
     kind: "transformation",
@@ -29258,7 +29857,7 @@ function transformAsync(operation) {
     reference: transformAsync,
     async: true,
     operation,
-    async _run(dataset) {
+    async "~run"(dataset) {
       dataset.value = await this.operation(dataset.value);
       return dataset;
     }
@@ -29266,13 +29865,14 @@ function transformAsync(operation) {
 }
 
 // src/actions/trim/trim.ts
+// @__NO_SIDE_EFFECTS__
 function trim() {
   return {
     kind: "transformation",
     type: "trim",
     reference: trim,
     async: false,
-    _run(dataset) {
+    "~run"(dataset) {
       dataset.value = dataset.value.trim();
       return dataset;
     }
@@ -29280,13 +29880,14 @@ function trim() {
 }
 
 // src/actions/trimEnd/trimEnd.ts
+// @__NO_SIDE_EFFECTS__
 function trimEnd() {
   return {
     kind: "transformation",
     type: "trim_end",
     reference: trimEnd,
     async: false,
-    _run(dataset) {
+    "~run"(dataset) {
       dataset.value = dataset.value.trimEnd();
       return dataset;
     }
@@ -29294,13 +29895,14 @@ function trimEnd() {
 }
 
 // src/actions/trimStart/trimStart.ts
+// @__NO_SIDE_EFFECTS__
 function trimStart() {
   return {
     kind: "transformation",
     type: "trim_start",
     reference: trimStart,
     async: false,
-    _run(dataset) {
+    "~run"(dataset) {
       dataset.value = dataset.value.trimStart();
       return dataset;
     }
@@ -29308,6 +29910,7 @@ function trimStart() {
 }
 
 // src/actions/ulid/ulid.ts
+// @__NO_SIDE_EFFECTS__
 function ulid(message) {
   return {
     kind: "validation",
@@ -29317,7 +29920,7 @@ function ulid(message) {
     expects: null,
     requirement: ULID_REGEX,
     message,
-    _run(dataset, config2) {
+    "~run"(dataset, config2) {
       if (dataset.typed && !this.requirement.test(dataset.value)) {
         _addIssue(this, "ULID", dataset, config2);
       }
@@ -29327,6 +29930,7 @@ function ulid(message) {
 }
 
 // src/actions/url/url.ts
+// @__NO_SIDE_EFFECTS__
 function url(message) {
   return {
     kind: "validation",
@@ -29343,7 +29947,7 @@ function url(message) {
       }
     },
     message,
-    _run(dataset, config2) {
+    "~run"(dataset, config2) {
       if (dataset.typed && !this.requirement(dataset.value)) {
         _addIssue(this, "URL", dataset, config2);
       }
@@ -29353,6 +29957,7 @@ function url(message) {
 }
 
 // src/actions/uuid/uuid.ts
+// @__NO_SIDE_EFFECTS__
 function uuid(message) {
   return {
     kind: "validation",
@@ -29362,7 +29967,7 @@ function uuid(message) {
     expects: null,
     requirement: UUID_REGEX,
     message,
-    _run(dataset, config2) {
+    "~run"(dataset, config2) {
       if (dataset.typed && !this.requirement.test(dataset.value)) {
         _addIssue(this, "UUID", dataset, config2);
       }
@@ -29372,6 +29977,7 @@ function uuid(message) {
 }
 
 // src/actions/value/value.ts
+// @__NO_SIDE_EFFECTS__
 function value(requirement, message) {
   return {
     kind: "validation",
@@ -29381,7 +29987,7 @@ function value(requirement, message) {
     expects: requirement instanceof Date ? requirement.toJSON() : _stringify(requirement),
     requirement,
     message,
-    _run(dataset, config2) {
+    "~run"(dataset, config2) {
       if (dataset.typed && !(this.requirement <= dataset.value && this.requirement >= dataset.value)) {
         _addIssue(this, "value", dataset, config2, {
           received: dataset.value instanceof Date ? dataset.value.toJSON() : _stringify(dataset.value)
@@ -29392,17 +29998,85 @@ function value(requirement, message) {
   };
 }
 
+// src/actions/values/values.ts
+// @__NO_SIDE_EFFECTS__
+function values(requirement, message) {
+  return {
+    kind: "validation",
+    type: "values",
+    reference: values,
+    async: false,
+    expects: `${_joinExpects(
+      requirement.map(
+        (value2) => value2 instanceof Date ? value2.toJSON() : _stringify(value2)
+      ),
+      "|"
+    )}`,
+    requirement,
+    message,
+    "~run"(dataset, config2) {
+      if (dataset.typed && !this.requirement.some(
+        (value2) => value2 <= dataset.value && value2 >= dataset.value
+      )) {
+        _addIssue(this, "value", dataset, config2, {
+          received: dataset.value instanceof Date ? dataset.value.toJSON() : _stringify(dataset.value)
+        });
+      }
+      return dataset;
+    }
+  };
+}
+
+// src/actions/words/words.ts
+// @__NO_SIDE_EFFECTS__
+function words(locales, requirement, message) {
+  return {
+    kind: "validation",
+    type: "words",
+    reference: words,
+    async: false,
+    expects: `${requirement}`,
+    locales,
+    requirement,
+    message,
+    "~run"(dataset, config2) {
+      if (dataset.typed) {
+        const count = _getWordCount(this.locales, dataset.value);
+        if (count !== this.requirement) {
+          _addIssue(this, "words", dataset, config2, {
+            received: `${count}`
+          });
+        }
+      }
+      return dataset;
+    }
+  };
+}
+
+// src/methods/assert/assert.ts
+function assert(schema, input) {
+  const issues = schema["~run"]({ value: input }, { abortEarly: true }).issues;
+  if (issues) {
+    throw new ValiError(issues);
+  }
+}
+
 // src/methods/config/config.ts
+// @__NO_SIDE_EFFECTS__
 function config(schema, config2) {
   return {
     ...schema,
-    _run(dataset, config_) {
-      return schema._run(dataset, { ...config_, ...config2 });
+    get "~standard"() {
+      return _getStandardProps(this);
+    },
+    "~run"(dataset, config_) {
+      return schema["~run"](dataset, { ...config_, ...config2 });
     }
   };
 }
 
 // src/methods/getFallback/getFallback.ts
+// @__NO_SIDE_EFFECTS__
 function getFallback(schema, dataset, config2) {
   return typeof schema.fallback === "function" ? (
     // @ts-expect-error
@@ -29414,34 +30088,43 @@ function getFallback(schema, dataset, config2) {
 }
 
 // src/methods/fallback/fallback.ts
+// @__NO_SIDE_EFFECTS__
 function fallback(schema, fallback2) {
   return {
     ...schema,
     fallback: fallback2,
-    _run(dataset, config2) {
-      const outputDataset = schema._run(dataset, config2);
+    get "~standard"() {
+      return _getStandardProps(this);
+    },
+    "~run"(dataset, config2) {
+      const outputDataset = schema["~run"](dataset, config2);
       return outputDataset.issues ? { typed: true, value: getFallback(this, outputDataset, config2) } : outputDataset;
     }
   };
 }
 
 // src/methods/fallback/fallbackAsync.ts
+// @__NO_SIDE_EFFECTS__
 function fallbackAsync(schema, fallback2) {
   return {
     ...schema,
     fallback: fallback2,
     async: true,
-    async _run(dataset, config2) {
-      const outputDataset = await schema._run(dataset, config2);
-      return outputDataset.issues ? (
-        // @ts-expect-error
-        { typed: true, value: await getFallback(this, outputDataset, config2) }
-      ) : outputDataset;
+    get "~standard"() {
+      return _getStandardProps(this);
+    },
+    async "~run"(dataset, config2) {
+      const outputDataset = await schema["~run"](dataset, config2);
+      return outputDataset.issues ? {
+        typed: true,
+        value: await getFallback(this, outputDataset, config2)
+      } : outputDataset;
     }
   };
 }
 
 // src/methods/flatten/flatten.ts
+// @__NO_SIDE_EFFECTS__
 function flatten(issues) {
   const flatErrors = {};
   for (const issue of issues) {
@@ -29475,17 +30158,18 @@ function flatten(issues) {
 }
 
 // src/methods/forward/forward.ts
-function forward(action, pathKeys) {
+// @__NO_SIDE_EFFECTS__
+function forward(action, path) {
   return {
     ...action,
-    _run(dataset, config2) {
+    "~run"(dataset, config2) {
       const prevIssues = dataset.issues && [...dataset.issues];
-      action._run(dataset, config2);
+      dataset = action["~run"](dataset, config2);
       if (dataset.issues) {
         for (const issue of dataset.issues) {
           if (!prevIssues?.includes(issue)) {
             let pathInput = dataset.value;
-            for (const key of pathKeys) {
+            for (const key of path) {
               const pathValue = pathInput[key];
               const pathItem = {
                 type: "unknown",
@@ -29513,18 +30197,19 @@ function forward(action, pathKeys) {
 }
 
 // src/methods/forward/forwardAsync.ts
-function forwardAsync(action, pathKeys) {
+// @__NO_SIDE_EFFECTS__
+function forwardAsync(action, path) {
   return {
     ...action,
     async: true,
-    async _run(dataset, config2) {
+    async "~run"(dataset, config2) {
       const prevIssues = dataset.issues && [...dataset.issues];
-      await action._run(dataset, config2);
+      dataset = await action["~run"](dataset, config2);
       if (dataset.issues) {
         for (const issue of dataset.issues) {
           if (!prevIssues?.includes(issue)) {
             let pathInput = dataset.value;
-            for (const key of pathKeys) {
+            for (const key of path) {
               const pathValue = pathInput[key];
               const pathItem = {
                 type: "unknown",
@@ -29552,6 +30237,7 @@ function forwardAsync(action, pathKeys) {
 }
 
 // src/methods/getDefault/getDefault.ts
+// @__NO_SIDE_EFFECTS__
 function getDefault(schema, dataset, config2) {
   return typeof schema.default === "function" ? (
     // @ts-expect-error
@@ -29563,11 +30249,12 @@ function getDefault(schema, dataset, config2) {
 }
 
 // src/methods/getDefaults/getDefaults.ts
+// @__NO_SIDE_EFFECTS__
 function getDefaults(schema) {
   if ("entries" in schema) {
     const object2 = {};
     for (const key in schema.entries) {
-      object2[key] = getDefaults(schema.entries[key]);
+      object2[key] = /* @__PURE__ */ getDefaults(schema.entries[key]);
     }
     return object2;
   }
@@ -29578,13 +30265,14 @@ function getDefaults(schema) {
 }
 
 // src/methods/getDefaults/getDefaultsAsync.ts
+// @__NO_SIDE_EFFECTS__
 async function getDefaultsAsync(schema) {
   if ("entries" in schema) {
     return Object.fromEntries(
       await Promise.all(
         Object.entries(schema.entries).map(async ([key, value2]) => [
           key,
-          await getDefaultsAsync(value2)
+          await /* @__PURE__ */ getDefaultsAsync(value2)
         ])
       )
     );
@@ -29596,11 +30284,12 @@ async function getDefaultsAsync(schema) {
 }
 
 // src/methods/getFallbacks/getFallbacks.ts
+// @__NO_SIDE_EFFECTS__
 function getFallbacks(schema) {
   if ("entries" in schema) {
     const object2 = {};
     for (const key in schema.entries) {
-      object2[key] = getFallbacks(schema.entries[key]);
+      object2[key] = /* @__PURE__ */ getFallbacks(schema.entries[key]);
     }
     return object2;
   }
@@ -29611,13 +30300,14 @@ function getFallbacks(schema) {
 }
 
 // src/methods/getFallbacks/getFallbacksAsync.ts
+// @__NO_SIDE_EFFECTS__
 async function getFallbacksAsync(schema) {
   if ("entries" in schema) {
     return Object.fromEntries(
       await Promise.all(
         Object.entries(schema.entries).map(async ([key, value2]) => [
           key,
-          await getFallbacksAsync(value2)
+          await /* @__PURE__ */ getFallbacksAsync(value2)
         ])
       )
     );
@@ -29629,11 +30319,13 @@ async function getFallbacksAsync(schema) {
 }
 
 // src/methods/is/is.ts
+// @__NO_SIDE_EFFECTS__
 function is(schema, input) {
-  return !schema._run({ typed: false, value: input }, { abortEarly: true }).issues;
+  return !schema["~run"]({ value: input }, { abortEarly: true }).issues;
 }
 
 // src/schemas/any/any.ts
+// @__NO_SIDE_EFFECTS__
 function any() {
   return {
     kind: "schema",
@@ -29641,7 +30333,10 @@ function any() {
     reference: any,
     expects: "any",
     async: false,
-    _run(dataset) {
+    get "~standard"() {
+      return _getStandardProps(this);
+    },
+    "~run"(dataset) {
       dataset.typed = true;
       return dataset;
     }
@@ -29649,6 +30344,7 @@ function any() {
 }
 
 // src/schemas/array/array.ts
+// @__NO_SIDE_EFFECTS__
 function array(item, message) {
   return {
     kind: "schema",
@@ -29658,14 +30354,17 @@ function array(item, message) {
     async: false,
     item,
     message,
-    _run(dataset, config2) {
+    get "~standard"() {
+      return _getStandardProps(this);
+    },
+    "~run"(dataset, config2) {
       const input = dataset.value;
       if (Array.isArray(input)) {
         dataset.typed = true;
         dataset.value = [];
         for (let key = 0; key < input.length; key++) {
           const value2 = input[key];
-          const itemDataset = this.item._run({ typed: false, value: value2 }, config2);
+          const itemDataset = this.item["~run"]({ value: value2 }, config2);
           if (itemDataset.issues) {
             const pathItem = {
               type: "array",
@@ -29704,6 +30403,7 @@ function array(item, message) {
 }
 
 // src/schemas/array/arrayAsync.ts
+// @__NO_SIDE_EFFECTS__
 function arrayAsync(item, message) {
   return {
     kind: "schema",
@@ -29713,13 +30413,16 @@ function arrayAsync(item, message) {
     async: true,
     item,
     message,
-    async _run(dataset, config2) {
+    get "~standard"() {
+      return _getStandardProps(this);
+    },
+    async "~run"(dataset, config2) {
       const input = dataset.value;
       if (Array.isArray(input)) {
         dataset.typed = true;
         dataset.value = [];
         const itemDatasets = await Promise.all(
-          input.map((value2) => this.item._run({ typed: false, value: value2 }, config2))
+          input.map((value2) => this.item["~run"]({ value: value2 }, config2))
         );
         for (let key = 0; key < itemDatasets.length; key++) {
           const itemDataset = itemDatasets[key];
@@ -29761,6 +30464,7 @@ function arrayAsync(item, message) {
 }
 
 // src/schemas/bigint/bigint.ts
+// @__NO_SIDE_EFFECTS__
 function bigint(message) {
   return {
     kind: "schema",
@@ -29769,7 +30473,10 @@ function bigint(message) {
     expects: "bigint",
     async: false,
     message,
-    _run(dataset, config2) {
+    get "~standard"() {
+      return _getStandardProps(this);
+    },
+    "~run"(dataset, config2) {
       if (typeof dataset.value === "bigint") {
         dataset.typed = true;
       } else {
@@ -29781,6 +30488,7 @@ function bigint(message) {
 }
 
 // src/schemas/blob/blob.ts
+// @__NO_SIDE_EFFECTS__
 function blob(message) {
   return {
     kind: "schema",
@@ -29789,7 +30497,10 @@ function blob(message) {
     expects: "Blob",
     async: false,
     message,
-    _run(dataset, config2) {
+    get "~standard"() {
+      return _getStandardProps(this);
+    },
+    "~run"(dataset, config2) {
       if (dataset.value instanceof Blob) {
         dataset.typed = true;
       } else {
@@ -29801,6 +30512,7 @@ function blob(message) {
 }
 
 // src/schemas/boolean/boolean.ts
+// @__NO_SIDE_EFFECTS__
 function dist_boolean(message) {
   return {
     kind: "schema",
@@ -29809,7 +30521,10 @@ function dist_boolean(message) {
     expects: "boolean",
     async: false,
     message,
-    _run(dataset, config2) {
+    get "~standard"() {
+      return _getStandardProps(this);
+    },
+    "~run"(dataset, config2) {
       if (typeof dataset.value === "boolean") {
         dataset.typed = true;
       } else {
@@ -29821,6 +30536,7 @@ function dist_boolean(message) {
 }
 
 // src/schemas/custom/custom.ts
+// @__NO_SIDE_EFFECTS__
 function custom(check2, message) {
   return {
     kind: "schema",
@@ -29830,7 +30546,10 @@ function custom(check2, message) {
     async: false,
     check: check2,
     message,
-    _run(dataset, config2) {
+    get "~standard"() {
+      return _getStandardProps(this);
+    },
+    "~run"(dataset, config2) {
       if (this.check(dataset.value)) {
         dataset.typed = true;
       } else {
@@ -29842,6 +30561,7 @@ function custom(check2, message) {
 }
 
 // src/schemas/custom/customAsync.ts
+// @__NO_SIDE_EFFECTS__
 function customAsync(check2, message) {
   return {
     kind: "schema",
@@ -29851,7 +30571,10 @@ function customAsync(check2, message) {
     async: true,
     check: check2,
     message,
-    async _run(dataset, config2) {
+    get "~standard"() {
+      return _getStandardProps(this);
+    },
+    async "~run"(dataset, config2) {
       if (await this.check(dataset.value)) {
         dataset.typed = true;
       } else {
@@ -29863,6 +30586,7 @@ function customAsync(check2, message) {
 }
 
 // src/schemas/date/date.ts
+// @__NO_SIDE_EFFECTS__
 function date(message) {
   return {
     kind: "schema",
@@ -29871,7 +30595,10 @@ function date(message) {
     expects: "Date",
     async: false,
     message,
-    _run(dataset, config2) {
+    get "~standard"() {
+      return _getStandardProps(this);
+    },
+    "~run"(dataset, config2) {
       if (dataset.value instanceof Date) {
         if (!isNaN(dataset.value)) {
           dataset.typed = true;
@@ -29889,8 +30616,14 @@ function date(message) {
 }
 
 // src/schemas/enum/enum.ts
+// @__NO_SIDE_EFFECTS__
 function enum_(enum__, message) {
-  const options = Object.entries(enum__).filter(([key]) => isNaN(+key)).map(([, value2]) => value2);
+  const options = [];
+  for (const key in enum__) {
+    if (`${+key}` !== key || typeof enum__[key] !== "string" || !Object.is(enum__[enum__[key]], +key)) {
+      options.push(enum__[key]);
+    }
+  }
   return {
     kind: "schema",
     type: "enum",
@@ -29900,7 +30633,10 @@ function enum_(enum__, message) {
     enum: enum__,
     options,
     message,
-    _run(dataset, config2) {
+    get "~standard"() {
+      return _getStandardProps(this);
+    },
+    "~run"(dataset, config2) {
       if (this.options.includes(dataset.value)) {
         dataset.typed = true;
       } else {
@@ -29911,7 +30647,48 @@ function enum_(enum__, message) {
   };
 }
 
+// src/schemas/exactOptional/exactOptional.ts
+// @__NO_SIDE_EFFECTS__
+function exactOptional(wrapped, default_) {
+  return {
+    kind: "schema",
+    type: "exact_optional",
+    reference: exactOptional,
+    expects: wrapped.expects,
+    async: false,
+    wrapped,
+    default: default_,
+    get "~standard"() {
+      return _getStandardProps(this);
+    },
+    "~run"(dataset, config2) {
+      return this.wrapped["~run"](dataset, config2);
+    }
+  };
+}
+
+// src/schemas/exactOptional/exactOptionalAsync.ts
+// @__NO_SIDE_EFFECTS__
+function exactOptionalAsync(wrapped, default_) {
+  return {
+    kind: "schema",
+    type: "exact_optional",
+    reference: exactOptionalAsync,
+    expects: wrapped.expects,
+    async: true,
+    wrapped,
+    default: default_,
+    get "~standard"() {
+      return _getStandardProps(this);
+    },
+    async "~run"(dataset, config2) {
+      return this.wrapped["~run"](dataset, config2);
+    }
+  };
+}
+
 // src/schemas/file/file.ts
+// @__NO_SIDE_EFFECTS__
 function file(message) {
   return {
     kind: "schema",
@@ -29920,7 +30697,10 @@ function file(message) {
     expects: "File",
     async: false,
     message,
-    _run(dataset, config2) {
+    get "~standard"() {
+      return _getStandardProps(this);
+    },
+    "~run"(dataset, config2) {
       if (dataset.value instanceof File) {
         dataset.typed = true;
       } else {
@@ -29932,6 +30712,7 @@ function file(message) {
 }
 
 // src/schemas/function/function.ts
+// @__NO_SIDE_EFFECTS__
 function function_(message) {
   return {
     kind: "schema",
@@ -29940,7 +30721,10 @@ function function_(message) {
     expects: "Function",
     async: false,
     message,
-    _run(dataset, config2) {
+    get "~standard"() {
+      return _getStandardProps(this);
+    },
+    "~run"(dataset, config2) {
       if (typeof dataset.value === "function") {
         dataset.typed = true;
       } else {
@@ -29952,6 +30736,7 @@ function function_(message) {
 }
 
 // src/schemas/instance/instance.ts
+// @__NO_SIDE_EFFECTS__
 function instance(class_, message) {
   return {
     kind: "schema",
@@ -29961,7 +30746,10 @@ function instance(class_, message) {
     async: false,
     class: class_,
     message,
-    _run(dataset, config2) {
+    get "~standard"() {
+      return _getStandardProps(this);
+    },
+    "~run"(dataset, config2) {
       if (dataset.value instanceof this.class) {
         dataset.typed = true;
       } else {
@@ -29973,6 +30761,7 @@ function instance(class_, message) {
 }
 
 // src/schemas/intersect/utils/_merge/_merge.ts
+// @__NO_SIDE_EFFECTS__
 function _merge(value1, value2) {
   if (typeof value1 === typeof value2) {
     if (value1 === value2 || value1 instanceof Date && value2 instanceof Date && +value1 === +value2) {
@@ -29981,7 +30770,7 @@ function _merge(value1, value2) {
     if (value1 && value2 && value1.constructor === Object && value2.constructor === Object) {
       for (const key in value2) {
         if (key in value1) {
-          const dataset = _merge(value1[key], value2[key]);
+          const dataset = /* @__PURE__ */ _merge(value1[key], value2[key]);
           if (dataset.issue) {
             return dataset;
           }
@@ -29995,7 +30784,7 @@ function _merge(value1, value2) {
     if (Array.isArray(value1) && Array.isArray(value2)) {
       if (value1.length === value2.length) {
         for (let index = 0; index < value1.length; index++) {
-          const dataset = _merge(value1[index], value2[index]);
+          const dataset = /* @__PURE__ */ _merge(value1[index], value2[index]);
           if (dataset.issue) {
             return dataset;
           }
@@ -30009,6 +30798,7 @@ function _merge(value1, value2) {
 }
 
 // src/schemas/intersect/intersect.ts
+// @__NO_SIDE_EFFECTS__
 function intersect(options, message) {
   return {
     kind: "schema",
@@ -30021,16 +30811,16 @@ function intersect(options, message) {
     async: false,
     options,
     message,
-    _run(dataset, config2) {
+    get "~standard"() {
+      return _getStandardProps(this);
+    },
+    "~run"(dataset, config2) {
       if (this.options.length) {
         const input = dataset.value;
         let outputs;
         dataset.typed = true;
         for (const schema of this.options) {
-          const optionDataset = schema._run(
-            { typed: false, value: input },
-            config2
-          );
+          const optionDataset = schema["~run"]({ value: input }, config2);
           if (optionDataset.issues) {
             if (dataset.issues) {
               dataset.issues.push(...optionDataset.issues);
@@ -30075,6 +30865,7 @@ function intersect(options, message) {
 }
 
 // src/schemas/intersect/intersectAsync.ts
+// @__NO_SIDE_EFFECTS__
 function intersectAsync(options, message) {
   return {
     kind: "schema",
@@ -30087,15 +30878,16 @@ function intersectAsync(options, message) {
     async: true,
     options,
     message,
-    async _run(dataset, config2) {
+    get "~standard"() {
+      return _getStandardProps(this);
+    },
+    async "~run"(dataset, config2) {
       if (this.options.length) {
         const input = dataset.value;
         let outputs;
         dataset.typed = true;
         const optionDatasets = await Promise.all(
-          this.options.map(
-            (schema) => schema._run({ typed: false, value: input }, config2)
-          )
+          this.options.map((schema) => schema["~run"]({ value: input }, config2))
         );
         for (const optionDataset of optionDatasets) {
           if (optionDataset.issues) {
@@ -30142,6 +30934,7 @@ function intersectAsync(options, message) {
 }
 
 // src/schemas/lazy/lazy.ts
+// @__NO_SIDE_EFFECTS__
 function lazy(getter) {
   return {
     kind: "schema",
@@ -30150,13 +30943,17 @@ function lazy(getter) {
     expects: "unknown",
     async: false,
     getter,
-    _run(dataset, config2) {
-      return this.getter(dataset.value)._run(dataset, config2);
+    get "~standard"() {
+      return _getStandardProps(this);
+    },
+    "~run"(dataset, config2) {
+      return this.getter(dataset.value)["~run"](dataset, config2);
     }
   };
 }
 
 // src/schemas/lazy/lazyAsync.ts
+// @__NO_SIDE_EFFECTS__
 function lazyAsync(getter) {
   return {
     kind: "schema",
@@ -30165,13 +30962,17 @@ function lazyAsync(getter) {
     expects: "unknown",
     async: true,
     getter,
-    async _run(dataset, config2) {
-      return (await this.getter(dataset.value))._run(dataset, config2);
+    get "~standard"() {
+      return _getStandardProps(this);
+    },
+    async "~run"(dataset, config2) {
+      return (await this.getter(dataset.value))["~run"](dataset, config2);
     }
   };
 }
 
 // src/schemas/literal/literal.ts
+// @__NO_SIDE_EFFECTS__
 function literal(literal_, message) {
   return {
     kind: "schema",
@@ -30181,7 +30982,10 @@ function literal(literal_, message) {
     async: false,
     literal: literal_,
     message,
-    _run(dataset, config2) {
+    get "~standard"() {
+      return _getStandardProps(this);
+    },
+    "~run"(dataset, config2) {
       if (dataset.value === this.literal) {
         dataset.typed = true;
       } else {
@@ -30193,6 +30997,7 @@ function literal(literal_, message) {
 }
 
 // src/schemas/looseObject/looseObject.ts
+// @__NO_SIDE_EFFECTS__
 function looseObject(entries, message) {
   return {
     kind: "schema",
@@ -30202,46 +31007,71 @@ function looseObject(entries, message) {
     async: false,
     entries,
     message,
-    _run(dataset, config2) {
+    get "~standard"() {
+      return _getStandardProps(this);
+    },
+    "~run"(dataset, config2) {
       const input = dataset.value;
       if (input && typeof input === "object") {
         dataset.typed = true;
         dataset.value = {};
         for (const key in this.entries) {
-          const value2 = input[key];
-          const valueDataset = this.entries[key]._run(
-            { typed: false, value: value2 },
-            config2
-          );
-          if (valueDataset.issues) {
-            const pathItem = {
-              type: "object",
-              origin: "value",
-              input,
-              key,
-              value: value2
-            };
-            for (const issue of valueDataset.issues) {
-              if (issue.path) {
-                issue.path.unshift(pathItem);
-              } else {
-                issue.path = [pathItem];
+          const valueSchema = this.entries[key];
+          if (key in input || (valueSchema.type === "exact_optional" || valueSchema.type === "optional" || valueSchema.type === "nullish") && // @ts-expect-error
+          valueSchema.default !== void 0) {
+            const value2 = key in input ? (
+              // @ts-expect-error
+              input[key]
+            ) : getDefault(valueSchema);
+            const valueDataset = valueSchema["~run"]({ value: value2 }, config2);
+            if (valueDataset.issues) {
+              const pathItem = {
+                type: "object",
+                origin: "value",
+                input,
+                key,
+                value: value2
+              };
+              for (const issue of valueDataset.issues) {
+                if (issue.path) {
+                  issue.path.unshift(pathItem);
+                } else {
+                  issue.path = [pathItem];
+                }
+                dataset.issues?.push(issue);
               }
-              dataset.issues?.push(issue);
+              if (!dataset.issues) {
+                dataset.issues = valueDataset.issues;
+              }
+              if (config2.abortEarly) {
+                dataset.typed = false;
+                break;
+              }
             }
-            if (!dataset.issues) {
-              dataset.issues = valueDataset.issues;
-            }
-            if (config2.abortEarly) {
+            if (!valueDataset.typed) {
               dataset.typed = false;
+            }
+            dataset.value[key] = valueDataset.value;
+          } else if (valueSchema.fallback !== void 0) {
+            dataset.value[key] = getFallback(valueSchema);
+          } else if (valueSchema.type !== "exact_optional" && valueSchema.type !== "optional" && valueSchema.type !== "nullish") {
+            _addIssue(this, "key", dataset, config2, {
+              input: void 0,
+              expected: `"${key}"`,
+              path: [
+                {
+                  type: "object",
+                  origin: "key",
+                  input,
+                  key,
+                  // @ts-expect-error
+                  value: input[key]
+                }
+              ]
+            });
+            if (config2.abortEarly) {
               break;
             }
-          }
-          if (!valueDataset.typed) {
-            dataset.typed = false;
-          }
-          if (valueDataset.value !== void 0 || key in input) {
-            dataset.value[key] = valueDataset.value;
           }
         }
         if (!dataset.issues || !config2.abortEarly) {
@@ -30260,6 +31090,7 @@ function looseObject(entries, message) {
 }
 
 // src/schemas/looseObject/looseObjectAsync.ts
+// @__NO_SIDE_EFFECTS__
 function looseObjectAsync(entries, message) {
   return {
     kind: "schema",
@@ -30269,51 +31100,87 @@ function looseObjectAsync(entries, message) {
     async: true,
     entries,
     message,
-    async _run(dataset, config2) {
+    get "~standard"() {
+      return _getStandardProps(this);
+    },
+    async "~run"(dataset, config2) {
       const input = dataset.value;
       if (input && typeof input === "object") {
         dataset.typed = true;
         dataset.value = {};
         const valueDatasets = await Promise.all(
-          Object.entries(this.entries).map(async ([key, schema]) => {
-            const value2 = input[key];
+          Object.entries(this.entries).map(async ([key, valueSchema]) => {
+            if (key in input || (valueSchema.type === "exact_optional" || valueSchema.type === "optional" || valueSchema.type === "nullish") && // @ts-expect-error
+            valueSchema.default !== void 0) {
+              const value2 = key in input ? (
+                // @ts-expect-error
+                input[key]
+              ) : await getDefault(valueSchema);
+              return [
+                key,
+                value2,
+                valueSchema,
+                await valueSchema["~run"]({ value: value2 }, config2)
+              ];
+            }
             return [
               key,
-              value2,
-              await schema._run({ typed: false, value: value2 }, config2)
+              // @ts-expect-error
+              input[key],
+              valueSchema,
+              null
             ];
           })
         );
-        for (const [key, value2, valueDataset] of valueDatasets) {
-          if (valueDataset.issues) {
-            const pathItem = {
-              type: "object",
-              origin: "value",
-              input,
-              key,
-              value: value2
-            };
-            for (const issue of valueDataset.issues) {
-              if (issue.path) {
-                issue.path.unshift(pathItem);
-              } else {
-                issue.path = [pathItem];
+        for (const [key, value2, valueSchema, valueDataset] of valueDatasets) {
+          if (valueDataset) {
+            if (valueDataset.issues) {
+              const pathItem = {
+                type: "object",
+                origin: "value",
+                input,
+                key,
+                value: value2
+              };
+              for (const issue of valueDataset.issues) {
+                if (issue.path) {
+                  issue.path.unshift(pathItem);
+                } else {
+                  issue.path = [pathItem];
+                }
+                dataset.issues?.push(issue);
               }
-              dataset.issues?.push(issue);
+              if (!dataset.issues) {
+                dataset.issues = valueDataset.issues;
+              }
+              if (config2.abortEarly) {
+                dataset.typed = false;
+                break;
+              }
             }
-            if (!dataset.issues) {
-              dataset.issues = valueDataset.issues;
-            }
-            if (config2.abortEarly) {
+            if (!valueDataset.typed) {
               dataset.typed = false;
+            }
+            dataset.value[key] = valueDataset.value;
+          } else if (valueSchema.fallback !== void 0) {
+            dataset.value[key] = await getFallback(valueSchema);
+          } else if (valueSchema.type !== "exact_optional" && valueSchema.type !== "optional" && valueSchema.type !== "nullish") {
+            _addIssue(this, "key", dataset, config2, {
+              input: void 0,
+              expected: `"${key}"`,
+              path: [
+                {
+                  type: "object",
+                  origin: "key",
+                  input,
+                  key,
+                  value: value2
+                }
+              ]
+            });
+            if (config2.abortEarly) {
               break;
             }
-          }
-          if (!valueDataset.typed) {
-            dataset.typed = false;
-          }
-          if (valueDataset.value !== void 0 || key in input) {
-            dataset.value[key] = valueDataset.value;
           }
         }
         if (!dataset.issues || !config2.abortEarly) {
@@ -30332,6 +31199,7 @@ function looseObjectAsync(entries, message) {
 }
 
 // src/schemas/looseTuple/looseTuple.ts
+// @__NO_SIDE_EFFECTS__
 function looseTuple(items, message) {
   return {
     kind: "schema",
@@ -30341,17 +31209,17 @@ function looseTuple(items, message) {
     async: false,
     items,
     message,
-    _run(dataset, config2) {
+    get "~standard"() {
+      return _getStandardProps(this);
+    },
+    "~run"(dataset, config2) {
       const input = dataset.value;
       if (Array.isArray(input)) {
         dataset.typed = true;
         dataset.value = [];
         for (let key = 0; key < this.items.length; key++) {
           const value2 = input[key];
-          const itemDataset = this.items[key]._run(
-            { typed: false, value: value2 },
-            config2
-          );
+          const itemDataset = this.items[key]["~run"]({ value: value2 }, config2);
           if (itemDataset.issues) {
             const pathItem = {
               type: "array",
@@ -30395,6 +31263,7 @@ function looseTuple(items, message) {
 }
 
 // src/schemas/looseTuple/looseTupleAsync.ts
+// @__NO_SIDE_EFFECTS__
 function looseTupleAsync(items, message) {
   return {
     kind: "schema",
@@ -30404,7 +31273,10 @@ function looseTupleAsync(items, message) {
     async: true,
     items,
     message,
-    async _run(dataset, config2) {
+    get "~standard"() {
+      return _getStandardProps(this);
+    },
+    async "~run"(dataset, config2) {
       const input = dataset.value;
       if (Array.isArray(input)) {
         dataset.typed = true;
@@ -30412,11 +31284,7 @@ function looseTupleAsync(items, message) {
         const itemDatasets = await Promise.all(
           this.items.map(async (item, key) => {
             const value2 = input[key];
-            return [
-              key,
-              value2,
-              await item._run({ typed: false, value: value2 }, config2)
-            ];
+            return [key, value2, await item["~run"]({ value: value2 }, config2)];
           })
         );
         for (const [key, value2, itemDataset] of itemDatasets) {
@@ -30463,6 +31331,7 @@ function looseTupleAsync(items, message) {
 }
 
 // src/schemas/map/map.ts
+// @__NO_SIDE_EFFECTS__
 function map(key, value2, message) {
   return {
     kind: "schema",
@@ -30473,16 +31342,16 @@ function map(key, value2, message) {
     key,
     value: value2,
     message,
-    _run(dataset, config2) {
+    get "~standard"() {
+      return _getStandardProps(this);
+    },
+    "~run"(dataset, config2) {
       const input = dataset.value;
       if (input instanceof Map) {
         dataset.typed = true;
         dataset.value = /* @__PURE__ */ new Map();
         for (const [inputKey, inputValue] of input) {
-          const keyDataset = this.key._run(
-            { typed: false, value: inputKey },
-            config2
-          );
+          const keyDataset = this.key["~run"]({ value: inputKey }, config2);
           if (keyDataset.issues) {
             const pathItem = {
               type: "map",
@@ -30507,8 +31376,8 @@ function map(key, value2, message) {
               break;
             }
           }
-          const valueDataset = this.value._run(
-            { typed: false, value: inputValue },
+          const valueDataset = this.value["~run"](
+            { value: inputValue },
             config2
           );
           if (valueDataset.issues) {
@@ -30549,6 +31418,7 @@ function map(key, value2, message) {
 }
 
 // src/schemas/map/mapAsync.ts
+// @__NO_SIDE_EFFECTS__
 function mapAsync(key, value2, message) {
   return {
     kind: "schema",
@@ -30559,7 +31429,10 @@ function mapAsync(key, value2, message) {
     key,
     value: value2,
     message,
-    async _run(dataset, config2) {
+    get "~standard"() {
+      return _getStandardProps(this);
+    },
+    async "~run"(dataset, config2) {
       const input = dataset.value;
       if (input instanceof Map) {
         dataset.typed = true;
@@ -30569,8 +31442,8 @@ function mapAsync(key, value2, message) {
             ([inputKey, inputValue]) => Promise.all([
               inputKey,
               inputValue,
-              this.key._run({ typed: false, value: inputKey }, config2),
-              this.value._run({ typed: false, value: inputValue }, config2)
+              this.key["~run"]({ value: inputKey }, config2),
+              this.value["~run"]({ value: inputValue }, config2)
             ])
           )
         );
@@ -30642,6 +31515,7 @@ function mapAsync(key, value2, message) {
 }
 
 // src/schemas/nan/nan.ts
+// @__NO_SIDE_EFFECTS__
 function nan(message) {
   return {
     kind: "schema",
@@ -30650,7 +31524,10 @@ function nan(message) {
     expects: "NaN",
     async: false,
     message,
-    _run(dataset, config2) {
+    get "~standard"() {
+      return _getStandardProps(this);
+    },
+    "~run"(dataset, config2) {
       if (Number.isNaN(dataset.value)) {
         dataset.typed = true;
       } else {
@@ -30662,6 +31539,7 @@ function nan(message) {
 }
 
 // src/schemas/never/never.ts
+// @__NO_SIDE_EFFECTS__
 function never(message) {
   return {
     kind: "schema",
@@ -30670,7 +31548,10 @@ function never(message) {
     expects: "never",
     async: false,
     message,
-    _run(dataset, config2) {
+    get "~standard"() {
+      return _getStandardProps(this);
+    },
+    "~run"(dataset, config2) {
       _addIssue(this, "type", dataset, config2);
       return dataset;
     }
@@ -30678,6 +31559,7 @@ function never(message) {
 }
 
 // src/schemas/nonNullable/nonNullable.ts
+// @__NO_SIDE_EFFECTS__
 function nonNullable(wrapped, message) {
   return {
     kind: "schema",
@@ -30687,17 +31569,23 @@ function nonNullable(wrapped, message) {
     async: false,
     wrapped,
     message,
-    _run(dataset, config2) {
+    get "~standard"() {
+      return _getStandardProps(this);
+    },
+    "~run"(dataset, config2) {
+      if (dataset.value !== null) {
+        dataset = this.wrapped["~run"](dataset, config2);
+      }
       if (dataset.value === null) {
         _addIssue(this, "type", dataset, config2);
-        return dataset;
       }
-      return this.wrapped._run(dataset, config2);
+      return dataset;
     }
   };
 }
 
 // src/schemas/nonNullable/nonNullableAsync.ts
+// @__NO_SIDE_EFFECTS__
 function nonNullableAsync(wrapped, message) {
   return {
     kind: "schema",
@@ -30707,17 +31595,23 @@ function nonNullableAsync(wrapped, message) {
     async: true,
     wrapped,
     message,
-    async _run(dataset, config2) {
+    get "~standard"() {
+      return _getStandardProps(this);
+    },
+    async "~run"(dataset, config2) {
+      if (dataset.value !== null) {
+        dataset = await this.wrapped["~run"](dataset, config2);
+      }
       if (dataset.value === null) {
         _addIssue(this, "type", dataset, config2);
-        return dataset;
       }
-      return this.wrapped._run(dataset, config2);
+      return dataset;
     }
   };
 }
 
 // src/schemas/nonNullish/nonNullish.ts
+// @__NO_SIDE_EFFECTS__
 function nonNullish(wrapped, message) {
   return {
     kind: "schema",
@@ -30727,17 +31621,23 @@ function nonNullish(wrapped, message) {
     async: false,
     wrapped,
     message,
-    _run(dataset, config2) {
+    get "~standard"() {
+      return _getStandardProps(this);
+    },
+    "~run"(dataset, config2) {
+      if (!(dataset.value === null || dataset.value === void 0)) {
+        dataset = this.wrapped["~run"](dataset, config2);
+      }
       if (dataset.value === null || dataset.value === void 0) {
         _addIssue(this, "type", dataset, config2);
-        return dataset;
       }
-      return this.wrapped._run(dataset, config2);
+      return dataset;
     }
   };
 }
 
 // src/schemas/nonNullish/nonNullishAsync.ts
+// @__NO_SIDE_EFFECTS__
 function nonNullishAsync(wrapped, message) {
   return {
     kind: "schema",
@@ -30747,17 +31647,23 @@ function nonNullishAsync(wrapped, message) {
     async: true,
     wrapped,
     message,
-    async _run(dataset, config2) {
+    get "~standard"() {
+      return _getStandardProps(this);
+    },
+    async "~run"(dataset, config2) {
+      if (!(dataset.value === null || dataset.value === void 0)) {
+        dataset = await this.wrapped["~run"](dataset, config2);
+      }
       if (dataset.value === null || dataset.value === void 0) {
         _addIssue(this, "type", dataset, config2);
-        return dataset;
       }
-      return this.wrapped._run(dataset, config2);
+      return dataset;
     }
   };
 }
 
 // src/schemas/nonOptional/nonOptional.ts
+// @__NO_SIDE_EFFECTS__
 function nonOptional(wrapped, message) {
   return {
     kind: "schema",
@@ -30767,17 +31673,23 @@ function nonOptional(wrapped, message) {
     async: false,
     wrapped,
     message,
-    _run(dataset, config2) {
+    get "~standard"() {
+      return _getStandardProps(this);
+    },
+    "~run"(dataset, config2) {
+      if (dataset.value !== void 0) {
+        dataset = this.wrapped["~run"](dataset, config2);
+      }
       if (dataset.value === void 0) {
         _addIssue(this, "type", dataset, config2);
-        return dataset;
       }
-      return this.wrapped._run(dataset, config2);
+      return dataset;
     }
   };
 }
 
 // src/schemas/nonOptional/nonOptionalAsync.ts
+// @__NO_SIDE_EFFECTS__
 function nonOptionalAsync(wrapped, message) {
   return {
     kind: "schema",
@@ -30787,17 +31699,23 @@ function nonOptionalAsync(wrapped, message) {
     async: true,
     wrapped,
     message,
-    async _run(dataset, config2) {
+    get "~standard"() {
+      return _getStandardProps(this);
+    },
+    async "~run"(dataset, config2) {
+      if (dataset.value !== void 0) {
+        dataset = await this.wrapped["~run"](dataset, config2);
+      }
       if (dataset.value === void 0) {
         _addIssue(this, "type", dataset, config2);
-        return dataset;
       }
-      return this.wrapped._run(dataset, config2);
+      return dataset;
     }
   };
 }
 
 // src/schemas/null/null.ts
+// @__NO_SIDE_EFFECTS__
 function null_(message) {
   return {
     kind: "schema",
@@ -30806,7 +31724,10 @@ function null_(message) {
     expects: "null",
     async: false,
     message,
-    _run(dataset, config2) {
+    get "~standard"() {
+      return _getStandardProps(this);
+    },
+    "~run"(dataset, config2) {
       if (dataset.value === null) {
         dataset.typed = true;
       } else {
@@ -30818,134 +31739,123 @@ function null_(message) {
 }
 
 // src/schemas/nullable/nullable.ts
-function nullable(wrapped, ...args) {
-  const schema = {
+// @__NO_SIDE_EFFECTS__
+function nullable(wrapped, default_) {
+  return {
     kind: "schema",
     type: "nullable",
     reference: nullable,
     expects: `(${wrapped.expects} | null)`,
     async: false,
     wrapped,
-    _run(dataset, config2) {
+    default: default_,
+    get "~standard"() {
+      return _getStandardProps(this);
+    },
+    "~run"(dataset, config2) {
       if (dataset.value === null) {
-        if ("default" in this) {
-          dataset.value = getDefault(
-            this,
-            dataset,
-            config2
-          );
+        if (this.default !== void 0) {
+          dataset.value = getDefault(this, dataset, config2);
         }
         if (dataset.value === null) {
           dataset.typed = true;
           return dataset;
         }
       }
-      return this.wrapped._run(dataset, config2);
+      return this.wrapped["~run"](dataset, config2);
     }
   };
-  if (0 in args) {
-    schema.default = args[0];
-  }
-  return schema;
 }
 
 // src/schemas/nullable/nullableAsync.ts
-function nullableAsync(wrapped, ...args) {
-  const schema = {
+// @__NO_SIDE_EFFECTS__
+function nullableAsync(wrapped, default_) {
+  return {
     kind: "schema",
     type: "nullable",
     reference: nullableAsync,
     expects: `(${wrapped.expects} | null)`,
     async: true,
     wrapped,
-    async _run(dataset, config2) {
+    default: default_,
+    get "~standard"() {
+      return _getStandardProps(this);
+    },
+    async "~run"(dataset, config2) {
       if (dataset.value === null) {
-        if ("default" in this) {
-          dataset.value = await getDefault(
-            this,
-            dataset,
-            config2
-          );
+        if (this.default !== void 0) {
+          dataset.value = await getDefault(this, dataset, config2);
         }
         if (dataset.value === null) {
           dataset.typed = true;
           return dataset;
         }
       }
-      return this.wrapped._run(dataset, config2);
+      return this.wrapped["~run"](dataset, config2);
     }
   };
-  if (0 in args) {
-    schema.default = args[0];
-  }
-  return schema;
 }
 
 // src/schemas/nullish/nullish.ts
-function nullish(wrapped, ...args) {
-  const schema = {
+// @__NO_SIDE_EFFECTS__
+function nullish(wrapped, default_) {
+  return {
     kind: "schema",
     type: "nullish",
     reference: nullish,
     expects: `(${wrapped.expects} | null | undefined)`,
     async: false,
     wrapped,
-    _run(dataset, config2) {
+    default: default_,
+    get "~standard"() {
+      return _getStandardProps(this);
+    },
+    "~run"(dataset, config2) {
       if (dataset.value === null || dataset.value === void 0) {
-        if ("default" in this) {
-          dataset.value = getDefault(
-            this,
-            dataset,
-            config2
-          );
+        if (this.default !== void 0) {
+          dataset.value = getDefault(this, dataset, config2);
         }
         if (dataset.value === null || dataset.value === void 0) {
           dataset.typed = true;
           return dataset;
         }
       }
-      return this.wrapped._run(dataset, config2);
+      return this.wrapped["~run"](dataset, config2);
     }
   };
-  if (0 in args) {
-    schema.default = args[0];
-  }
-  return schema;
 }
 
 // src/schemas/nullish/nullishAsync.ts
-function nullishAsync(wrapped, ...args) {
-  const schema = {
+// @__NO_SIDE_EFFECTS__
+function nullishAsync(wrapped, default_) {
+  return {
     kind: "schema",
     type: "nullish",
     reference: nullishAsync,
     expects: `(${wrapped.expects} | null | undefined)`,
     async: true,
     wrapped,
-    async _run(dataset, config2) {
+    default: default_,
+    get "~standard"() {
+      return _getStandardProps(this);
+    },
+    async "~run"(dataset, config2) {
       if (dataset.value === null || dataset.value === void 0) {
-        if ("default" in this) {
-          dataset.value = await getDefault(
-            this,
-            dataset,
-            config2
-          );
+        if (this.default !== void 0) {
+          dataset.value = await getDefault(this, dataset, config2);
         }
         if (dataset.value === null || dataset.value === void 0) {
           dataset.typed = true;
           return dataset;
         }
       }
-      return this.wrapped._run(dataset, config2);
+      return this.wrapped["~run"](dataset, config2);
     }
   };
-  if (0 in args) {
-    schema.default = args[0];
-  }
-  return schema;
 }
 
 // src/schemas/number/number.ts
+// @__NO_SIDE_EFFECTS__
 function number(message) {
   return {
     kind: "schema",
@@ -30954,7 +31864,10 @@ function number(message) {
     expects: "number",
     async: false,
     message,
-    _run(dataset, config2) {
+    get "~standard"() {
+      return _getStandardProps(this);
+    },
+    "~run"(dataset, config2) {
       if (typeof dataset.value === "number" && !isNaN(dataset.value)) {
         dataset.typed = true;
       } else {
@@ -30966,6 +31879,7 @@ function number(message) {
 }
 
 // src/schemas/object/object.ts
+// @__NO_SIDE_EFFECTS__
 function object(entries, message) {
   return {
     kind: "schema",
@@ -30975,46 +31889,71 @@ function object(entries, message) {
     async: false,
     entries,
     message,
-    _run(dataset, config2) {
+    get "~standard"() {
+      return _getStandardProps(this);
+    },
+    "~run"(dataset, config2) {
       const input = dataset.value;
       if (input && typeof input === "object") {
         dataset.typed = true;
         dataset.value = {};
         for (const key in this.entries) {
-          const value2 = input[key];
-          const valueDataset = this.entries[key]._run(
-            { typed: false, value: value2 },
-            config2
-          );
-          if (valueDataset.issues) {
-            const pathItem = {
-              type: "object",
-              origin: "value",
-              input,
-              key,
-              value: value2
-            };
-            for (const issue of valueDataset.issues) {
-              if (issue.path) {
-                issue.path.unshift(pathItem);
-              } else {
-                issue.path = [pathItem];
+          const valueSchema = this.entries[key];
+          if (key in input || (valueSchema.type === "exact_optional" || valueSchema.type === "optional" || valueSchema.type === "nullish") && // @ts-expect-error
+          valueSchema.default !== void 0) {
+            const value2 = key in input ? (
+              // @ts-expect-error
+              input[key]
+            ) : getDefault(valueSchema);
+            const valueDataset = valueSchema["~run"]({ value: value2 }, config2);
+            if (valueDataset.issues) {
+              const pathItem = {
+                type: "object",
+                origin: "value",
+                input,
+                key,
+                value: value2
+              };
+              for (const issue of valueDataset.issues) {
+                if (issue.path) {
+                  issue.path.unshift(pathItem);
+                } else {
+                  issue.path = [pathItem];
+                }
+                dataset.issues?.push(issue);
               }
-              dataset.issues?.push(issue);
+              if (!dataset.issues) {
+                dataset.issues = valueDataset.issues;
+              }
+              if (config2.abortEarly) {
+                dataset.typed = false;
+                break;
+              }
             }
-            if (!dataset.issues) {
-              dataset.issues = valueDataset.issues;
-            }
-            if (config2.abortEarly) {
+            if (!valueDataset.typed) {
               dataset.typed = false;
+            }
+            dataset.value[key] = valueDataset.value;
+          } else if (valueSchema.fallback !== void 0) {
+            dataset.value[key] = getFallback(valueSchema);
+          } else if (valueSchema.type !== "exact_optional" && valueSchema.type !== "optional" && valueSchema.type !== "nullish") {
+            _addIssue(this, "key", dataset, config2, {
+              input: void 0,
+              expected: `"${key}"`,
+              path: [
+                {
+                  type: "object",
+                  origin: "key",
+                  input,
+                  key,
+                  // @ts-expect-error
+                  value: input[key]
+                }
+              ]
+            });
+            if (config2.abortEarly) {
               break;
             }
-          }
-          if (!valueDataset.typed) {
-            dataset.typed = false;
-          }
-          if (valueDataset.value !== void 0 || key in input) {
-            dataset.value[key] = valueDataset.value;
           }
         }
       } else {
@@ -31026,6 +31965,7 @@ function object(entries, message) {
 }
 
 // src/schemas/object/objectAsync.ts
+// @__NO_SIDE_EFFECTS__
 function objectAsync(entries, message) {
   return {
     kind: "schema",
@@ -31035,51 +31975,87 @@ function objectAsync(entries, message) {
     async: true,
     entries,
     message,
-    async _run(dataset, config2) {
+    get "~standard"() {
+      return _getStandardProps(this);
+    },
+    async "~run"(dataset, config2) {
       const input = dataset.value;
       if (input && typeof input === "object") {
         dataset.typed = true;
         dataset.value = {};
         const valueDatasets = await Promise.all(
-          Object.entries(this.entries).map(async ([key, schema]) => {
-            const value2 = input[key];
+          Object.entries(this.entries).map(async ([key, valueSchema]) => {
+            if (key in input || (valueSchema.type === "exact_optional" || valueSchema.type === "optional" || valueSchema.type === "nullish") && // @ts-expect-error
+            valueSchema.default !== void 0) {
+              const value2 = key in input ? (
+                // @ts-expect-error
+                input[key]
+              ) : await getDefault(valueSchema);
+              return [
+                key,
+                value2,
+                valueSchema,
+                await valueSchema["~run"]({ value: value2 }, config2)
+              ];
+            }
             return [
               key,
-              value2,
-              await schema._run({ typed: false, value: value2 }, config2)
+              // @ts-expect-error
+              input[key],
+              valueSchema,
+              null
             ];
           })
         );
-        for (const [key, value2, valueDataset] of valueDatasets) {
-          if (valueDataset.issues) {
-            const pathItem = {
-              type: "object",
-              origin: "value",
-              input,
-              key,
-              value: value2
-            };
-            for (const issue of valueDataset.issues) {
-              if (issue.path) {
-                issue.path.unshift(pathItem);
-              } else {
-                issue.path = [pathItem];
+        for (const [key, value2, valueSchema, valueDataset] of valueDatasets) {
+          if (valueDataset) {
+            if (valueDataset.issues) {
+              const pathItem = {
+                type: "object",
+                origin: "value",
+                input,
+                key,
+                value: value2
+              };
+              for (const issue of valueDataset.issues) {
+                if (issue.path) {
+                  issue.path.unshift(pathItem);
+                } else {
+                  issue.path = [pathItem];
+                }
+                dataset.issues?.push(issue);
               }
-              dataset.issues?.push(issue);
+              if (!dataset.issues) {
+                dataset.issues = valueDataset.issues;
+              }
+              if (config2.abortEarly) {
+                dataset.typed = false;
+                break;
+              }
             }
-            if (!dataset.issues) {
-              dataset.issues = valueDataset.issues;
-            }
-            if (config2.abortEarly) {
+            if (!valueDataset.typed) {
               dataset.typed = false;
+            }
+            dataset.value[key] = valueDataset.value;
+          } else if (valueSchema.fallback !== void 0) {
+            dataset.value[key] = await getFallback(valueSchema);
+          } else if (valueSchema.type !== "exact_optional" && valueSchema.type !== "optional" && valueSchema.type !== "nullish") {
+            _addIssue(this, "key", dataset, config2, {
+              input: void 0,
+              expected: `"${key}"`,
+              path: [
+                {
+                  type: "object",
+                  origin: "key",
+                  input,
+                  key,
+                  value: value2
+                }
+              ]
+            });
+            if (config2.abortEarly) {
               break;
             }
-          }
-          if (!valueDataset.typed) {
-            dataset.typed = false;
-          }
-          if (valueDataset.value !== void 0 || key in input) {
-            dataset.value[key] = valueDataset.value;
           }
         }
       } else {
@@ -31091,6 +32067,7 @@ function objectAsync(entries, message) {
 }
 
 // src/schemas/objectWithRest/objectWithRest.ts
+// @__NO_SIDE_EFFECTS__
 function objectWithRest(entries, rest, message) {
   return {
     kind: "schema",
@@ -31101,54 +32078,79 @@ function objectWithRest(entries, rest, message) {
     entries,
     rest,
     message,
-    _run(dataset, config2) {
+    get "~standard"() {
+      return _getStandardProps(this);
+    },
+    "~run"(dataset, config2) {
       const input = dataset.value;
       if (input && typeof input === "object") {
         dataset.typed = true;
         dataset.value = {};
         for (const key in this.entries) {
-          const value2 = input[key];
-          const valueDataset = this.entries[key]._run(
-            { typed: false, value: value2 },
-            config2
-          );
-          if (valueDataset.issues) {
-            const pathItem = {
-              type: "object",
-              origin: "value",
-              input,
-              key,
-              value: value2
-            };
-            for (const issue of valueDataset.issues) {
-              if (issue.path) {
-                issue.path.unshift(pathItem);
-              } else {
-                issue.path = [pathItem];
+          const valueSchema = this.entries[key];
+          if (key in input || (valueSchema.type === "exact_optional" || valueSchema.type === "optional" || valueSchema.type === "nullish") && // @ts-expect-error
+          valueSchema.default !== void 0) {
+            const value2 = key in input ? (
+              // @ts-expect-error
+              input[key]
+            ) : getDefault(valueSchema);
+            const valueDataset = valueSchema["~run"]({ value: value2 }, config2);
+            if (valueDataset.issues) {
+              const pathItem = {
+                type: "object",
+                origin: "value",
+                input,
+                key,
+                value: value2
+              };
+              for (const issue of valueDataset.issues) {
+                if (issue.path) {
+                  issue.path.unshift(pathItem);
+                } else {
+                  issue.path = [pathItem];
+                }
+                dataset.issues?.push(issue);
               }
-              dataset.issues?.push(issue);
+              if (!dataset.issues) {
+                dataset.issues = valueDataset.issues;
+              }
+              if (config2.abortEarly) {
+                dataset.typed = false;
+                break;
+              }
             }
-            if (!dataset.issues) {
-              dataset.issues = valueDataset.issues;
-            }
-            if (config2.abortEarly) {
+            if (!valueDataset.typed) {
               dataset.typed = false;
+            }
+            dataset.value[key] = valueDataset.value;
+          } else if (valueSchema.fallback !== void 0) {
+            dataset.value[key] = getFallback(valueSchema);
+          } else if (valueSchema.type !== "exact_optional" && valueSchema.type !== "optional" && valueSchema.type !== "nullish") {
+            _addIssue(this, "key", dataset, config2, {
+              input: void 0,
+              expected: `"${key}"`,
+              path: [
+                {
+                  type: "object",
+                  origin: "key",
+                  input,
+                  key,
+                  // @ts-expect-error
+                  value: input[key]
+                }
+              ]
+            });
+            if (config2.abortEarly) {
               break;
             }
-          }
-          if (!valueDataset.typed) {
-            dataset.typed = false;
-          }
-          if (valueDataset.value !== void 0 || key in input) {
-            dataset.value[key] = valueDataset.value;
           }
         }
         if (!dataset.issues || !config2.abortEarly) {
           for (const key in input) {
             if (_isValidObjectKey(input, key) && !(key in this.entries)) {
-              const value2 = input[key];
-              const valueDataset = this.rest._run(
-                { typed: false, value: value2 },
+              const valueDataset = this.rest["~run"](
+                // @ts-expect-error
+                { value: input[key] },
                 config2
               );
               if (valueDataset.issues) {
@@ -31157,7 +32159,8 @@ function objectWithRest(entries, rest, message) {
                   origin: "value",
                   input,
                   key,
-                  value: value2
+                  // @ts-expect-error
+                  value: input[key]
                 };
                 for (const issue of valueDataset.issues) {
                   if (issue.path) {
@@ -31191,6 +32194,7 @@ function objectWithRest(entries, rest, message) {
 }
 
 // src/schemas/objectWithRest/objectWithRestAsync.ts
+// @__NO_SIDE_EFFECTS__
 function objectWithRestAsync(entries, rest, message) {
   return {
     kind: "schema",
@@ -31201,27 +32205,42 @@ function objectWithRestAsync(entries, rest, message) {
     entries,
     rest,
     message,
-    async _run(dataset, config2) {
+    get "~standard"() {
+      return _getStandardProps(this);
+    },
+    async "~run"(dataset, config2) {
       const input = dataset.value;
       if (input && typeof input === "object") {
         dataset.typed = true;
         dataset.value = {};
         const [normalDatasets, restDatasets] = await Promise.all([
-          // Parse schema of each normal entry
-          // Hint: We do not distinguish between missing and `undefined` entries.
-          // The reason for this decision is that it reduces the bundle size, and
-          // we also expect that most users will expect this behavior.
+          // If key is present or its an optional schema with a default value,
+          // parse input of key or default value asynchronously
           Promise.all(
-            Object.entries(this.entries).map(async ([key, schema]) => {
-              const value2 = input[key];
+            Object.entries(this.entries).map(async ([key, valueSchema]) => {
+              if (key in input || (valueSchema.type === "exact_optional" || valueSchema.type === "optional" || valueSchema.type === "nullish") && // @ts-expect-error
+              valueSchema.default !== void 0) {
+                const value2 = key in input ? (
+                  // @ts-expect-error
+                  input[key]
+                ) : await getDefault(valueSchema);
+                return [
+                  key,
+                  value2,
+                  valueSchema,
+                  await valueSchema["~run"]({ value: value2 }, config2)
+                ];
+              }
               return [
                 key,
-                value2,
-                await schema._run({ typed: false, value: value2 }, config2)
+                // @ts-expect-error
+                input[key],
+                valueSchema,
+                null
               ];
             })
           ),
-          // Parse other entries with rest schema
+          // Parse other entries with rest schema asynchronously
           // Hint: We exclude specific keys for security reasons
           Promise.all(
             Object.entries(input).filter(
@@ -31230,41 +32249,60 @@ function objectWithRestAsync(entries, rest, message) {
               async ([key, value2]) => [
                 key,
                 value2,
-                await this.rest._run({ typed: false, value: value2 }, config2)
+                await this.rest["~run"]({ value: value2 }, config2)
               ]
             )
           )
         ]);
-        for (const [key, value2, valueDataset] of normalDatasets) {
-          if (valueDataset.issues) {
-            const pathItem = {
-              type: "object",
-              origin: "value",
-              input,
-              key,
-              value: value2
-            };
-            for (const issue of valueDataset.issues) {
-              if (issue.path) {
-                issue.path.unshift(pathItem);
-              } else {
-                issue.path = [pathItem];
+        for (const [key, value2, valueSchema, valueDataset] of normalDatasets) {
+          if (valueDataset) {
+            if (valueDataset.issues) {
+              const pathItem = {
+                type: "object",
+                origin: "value",
+                input,
+                key,
+                value: value2
+              };
+              for (const issue of valueDataset.issues) {
+                if (issue.path) {
+                  issue.path.unshift(pathItem);
+                } else {
+                  issue.path = [pathItem];
+                }
+                dataset.issues?.push(issue);
               }
-              dataset.issues?.push(issue);
+              if (!dataset.issues) {
+                dataset.issues = valueDataset.issues;
+              }
+              if (config2.abortEarly) {
+                dataset.typed = false;
+                break;
+              }
             }
-            if (!dataset.issues) {
-              dataset.issues = valueDataset.issues;
-            }
-            if (config2.abortEarly) {
+            if (!valueDataset.typed) {
               dataset.typed = false;
+            }
+            dataset.value[key] = valueDataset.value;
+          } else if (valueSchema.fallback !== void 0) {
+            dataset.value[key] = await getFallback(valueSchema);
+          } else if (valueSchema.type !== "exact_optional" && valueSchema.type !== "optional" && valueSchema.type !== "nullish") {
+            _addIssue(this, "key", dataset, config2, {
+              input: void 0,
+              expected: `"${key}"`,
+              path: [
+                {
+                  type: "object",
+                  origin: "key",
+                  input,
+                  key,
+                  value: value2
+                }
+              ]
+            });
+            if (config2.abortEarly) {
               break;
             }
-          }
-          if (!valueDataset.typed) {
-            dataset.typed = false;
-          }
-          if (valueDataset.value !== void 0 || key in input) {
-            dataset.value[key] = valueDataset.value;
           }
         }
         if (!dataset.issues || !config2.abortEarly) {
@@ -31308,70 +32346,65 @@ function objectWithRestAsync(entries, rest, message) {
 }
 
 // src/schemas/optional/optional.ts
-function optional(wrapped, ...args) {
-  const schema = {
+// @__NO_SIDE_EFFECTS__
+function optional(wrapped, default_) {
+  return {
     kind: "schema",
     type: "optional",
     reference: optional,
     expects: `(${wrapped.expects} | undefined)`,
     async: false,
     wrapped,
-    _run(dataset, config2) {
+    default: default_,
+    get "~standard"() {
+      return _getStandardProps(this);
+    },
+    "~run"(dataset, config2) {
       if (dataset.value === void 0) {
-        if ("default" in this) {
-          dataset.value = getDefault(
-            this,
-            dataset,
-            config2
-          );
+        if (this.default !== void 0) {
+          dataset.value = getDefault(this, dataset, config2);
         }
         if (dataset.value === void 0) {
           dataset.typed = true;
           return dataset;
         }
       }
-      return this.wrapped._run(dataset, config2);
+      return this.wrapped["~run"](dataset, config2);
     }
   };
-  if (0 in args) {
-    schema.default = args[0];
-  }
-  return schema;
 }
 
 // src/schemas/optional/optionalAsync.ts
-function optionalAsync(wrapped, ...args) {
-  const schema = {
+// @__NO_SIDE_EFFECTS__
+function optionalAsync(wrapped, default_) {
+  return {
     kind: "schema",
     type: "optional",
     reference: optionalAsync,
     expects: `(${wrapped.expects} | undefined)`,
     async: true,
     wrapped,
-    async _run(dataset, config2) {
+    default: default_,
+    get "~standard"() {
+      return _getStandardProps(this);
+    },
+    async "~run"(dataset, config2) {
       if (dataset.value === void 0) {
-        if ("default" in this) {
-          dataset.value = await getDefault(
-            this,
-            dataset,
-            config2
-          );
+        if (this.default !== void 0) {
+          dataset.value = await getDefault(this, dataset, config2);
         }
         if (dataset.value === void 0) {
           dataset.typed = true;
           return dataset;
         }
       }
-      return this.wrapped._run(dataset, config2);
+      return this.wrapped["~run"](dataset, config2);
     }
   };
-  if (0 in args) {
-    schema.default = args[0];
-  }
-  return schema;
 }
 
 // src/schemas/picklist/picklist.ts
+// @__NO_SIDE_EFFECTS__
 function picklist(options, message) {
   return {
     kind: "schema",
@@ -31381,7 +32414,10 @@ function picklist(options, message) {
     async: false,
     options,
     message,
-    _run(dataset, config2) {
+    get "~standard"() {
+      return _getStandardProps(this);
+    },
+    "~run"(dataset, config2) {
       if (this.options.includes(dataset.value)) {
         dataset.typed = true;
       } else {
@@ -31393,6 +32429,7 @@ function picklist(options, message) {
 }
 
 // src/schemas/promise/promise.ts
+// @__NO_SIDE_EFFECTS__
 function promise(message) {
   return {
     kind: "schema",
@@ -31401,7 +32438,10 @@ function promise(message) {
     expects: "Promise",
     async: false,
     message,
-    _run(dataset, config2) {
+    get "~standard"() {
+      return _getStandardProps(this);
+    },
+    "~run"(dataset, config2) {
       if (dataset.value instanceof Promise) {
         dataset.typed = true;
       } else {
@@ -31413,6 +32453,7 @@ function promise(message) {
 }
 
 // src/schemas/record/record.ts
+// @__NO_SIDE_EFFECTS__
 function record(key, value2, message) {
   return {
     kind: "schema",
@@ -31423,7 +32464,10 @@ function record(key, value2, message) {
     key,
     value: value2,
     message,
-    _run(dataset, config2) {
+    get "~standard"() {
+      return _getStandardProps(this);
+    },
+    "~run"(dataset, config2) {
       const input = dataset.value;
       if (input && typeof input === "object") {
         dataset.typed = true;
@@ -31431,10 +32475,7 @@ function record(key, value2, message) {
         for (const entryKey in input) {
           if (_isValidObjectKey(input, entryKey)) {
             const entryValue = input[entryKey];
-            const keyDataset = this.key._run(
-              { typed: false, value: entryKey },
-              config2
-            );
+            const keyDataset = this.key["~run"]({ value: entryKey }, config2);
             if (keyDataset.issues) {
               const pathItem = {
                 type: "object",
@@ -31455,8 +32496,8 @@ function record(key, value2, message) {
                 break;
               }
             }
-            const valueDataset = this.value._run(
-              { typed: false, value: entryValue },
+            const valueDataset = this.value["~run"](
+              { value: entryValue },
               config2
             );
             if (valueDataset.issues) {
@@ -31500,6 +32541,7 @@ function record(key, value2, message) {
 }
 
 // src/schemas/record/recordAsync.ts
+// @__NO_SIDE_EFFECTS__
 function recordAsync(key, value2, message) {
   return {
     kind: "schema",
@@ -31510,7 +32552,10 @@ function recordAsync(key, value2, message) {
     key,
     value: value2,
     message,
-    async _run(dataset, config2) {
+    get "~standard"() {
+      return _getStandardProps(this);
+    },
+    async "~run"(dataset, config2) {
       const input = dataset.value;
       if (input && typeof input === "object") {
         dataset.typed = true;
@@ -31520,8 +32565,8 @@ function recordAsync(key, value2, message) {
             ([entryKey, entryValue]) => Promise.all([
               entryKey,
               entryValue,
-              this.key._run({ typed: false, value: entryKey }, config2),
-              this.value._run({ typed: false, value: entryValue }, config2)
+              this.key["~run"]({ value: entryKey }, config2),
+              this.value["~run"]({ value: entryValue }, config2)
             ])
           )
         );
@@ -31591,6 +32636,7 @@ function recordAsync(key, value2, message) {
 }
 
 // src/schemas/set/set.ts
+// @__NO_SIDE_EFFECTS__
 function set(value2, message) {
   return {
     kind: "schema",
@@ -31600,14 +32646,17 @@ function set(value2, message) {
     async: false,
     value: value2,
     message,
-    _run(dataset, config2) {
+    get "~standard"() {
+      return _getStandardProps(this);
+    },
+    "~run"(dataset, config2) {
       const input = dataset.value;
       if (input instanceof Set) {
         dataset.typed = true;
         dataset.value = /* @__PURE__ */ new Set();
         for (const inputValue of input) {
-          const valueDataset = this.value._run(
-            { typed: false, value: inputValue },
+          const valueDataset = this.value["~run"](
+            { value: inputValue },
             config2
           );
           if (valueDataset.issues) {
@@ -31648,6 +32697,7 @@ function set(value2, message) {
 }
 
 // src/schemas/set/setAsync.ts
+// @__NO_SIDE_EFFECTS__
 function setAsync(value2, message) {
   return {
     kind: "schema",
@@ -31657,7 +32707,10 @@ function setAsync(value2, message) {
     async: true,
     value: value2,
     message,
-    async _run(dataset, config2) {
+    get "~standard"() {
+      return _getStandardProps(this);
+    },
+    async "~run"(dataset, config2) {
       const input = dataset.value;
       if (input instanceof Set) {
         dataset.typed = true;
@@ -31666,10 +32719,7 @@ function setAsync(value2, message) {
           [...input].map(
             async (inputValue) => [
               inputValue,
-              await this.value._run(
-                { typed: false, value: inputValue },
-                config2
-              )
+              await this.value["~run"]({ value: inputValue }, config2)
             ]
           )
         );
@@ -31712,6 +32762,7 @@ function setAsync(value2, message) {
 }
 
 // src/schemas/strictObject/strictObject.ts
+// @__NO_SIDE_EFFECTS__
 function strictObject(entries, message) {
   return {
     kind: "schema",
@@ -31721,62 +32772,87 @@ function strictObject(entries, message) {
     async: false,
     entries,
     message,
-    _run(dataset, config2) {
+    get "~standard"() {
+      return _getStandardProps(this);
+    },
+    "~run"(dataset, config2) {
       const input = dataset.value;
       if (input && typeof input === "object") {
         dataset.typed = true;
         dataset.value = {};
         for (const key in this.entries) {
-          const value2 = input[key];
-          const valueDataset = this.entries[key]._run(
-            { typed: false, value: value2 },
-            config2
-          );
-          if (valueDataset.issues) {
-            const pathItem = {
-              type: "object",
-              origin: "value",
-              input,
-              key,
-              value: value2
-            };
-            for (const issue of valueDataset.issues) {
-              if (issue.path) {
-                issue.path.unshift(pathItem);
-              } else {
-                issue.path = [pathItem];
+          const valueSchema = this.entries[key];
+          if (key in input || (valueSchema.type === "exact_optional" || valueSchema.type === "optional" || valueSchema.type === "nullish") && // @ts-expect-error
+          valueSchema.default !== void 0) {
+            const value2 = key in input ? (
+              // @ts-expect-error
+              input[key]
+            ) : getDefault(valueSchema);
+            const valueDataset = valueSchema["~run"]({ value: value2 }, config2);
+            if (valueDataset.issues) {
+              const pathItem = {
+                type: "object",
+                origin: "value",
+                input,
+                key,
+                value: value2
+              };
+              for (const issue of valueDataset.issues) {
+                if (issue.path) {
+                  issue.path.unshift(pathItem);
+                } else {
+                  issue.path = [pathItem];
+                }
+                dataset.issues?.push(issue);
               }
-              dataset.issues?.push(issue);
+              if (!dataset.issues) {
+                dataset.issues = valueDataset.issues;
+              }
+              if (config2.abortEarly) {
+                dataset.typed = false;
+                break;
+              }
             }
-            if (!dataset.issues) {
-              dataset.issues = valueDataset.issues;
-            }
-            if (config2.abortEarly) {
+            if (!valueDataset.typed) {
               dataset.typed = false;
+            }
+            dataset.value[key] = valueDataset.value;
+          } else if (valueSchema.fallback !== void 0) {
+            dataset.value[key] = getFallback(valueSchema);
+          } else if (valueSchema.type !== "exact_optional" && valueSchema.type !== "optional" && valueSchema.type !== "nullish") {
+            _addIssue(this, "key", dataset, config2, {
+              input: void 0,
+              expected: `"${key}"`,
+              path: [
+                {
+                  type: "object",
+                  origin: "key",
+                  input,
+                  key,
+                  // @ts-expect-error
+                  value: input[key]
+                }
+              ]
+            });
+            if (config2.abortEarly) {
               break;
             }
-          }
-          if (!valueDataset.typed) {
-            dataset.typed = false;
-          }
-          if (valueDataset.value !== void 0 || key in input) {
-            dataset.value[key] = valueDataset.value;
           }
         }
         if (!dataset.issues || !config2.abortEarly) {
           for (const key in input) {
             if (!(key in this.entries)) {
-              const value2 = input[key];
-              _addIssue(this, "type", dataset, config2, {
-                input: value2,
+              _addIssue(this, "key", dataset, config2, {
+                input: key,
                 expected: "never",
                 path: [
                   {
                     type: "object",
-                    origin: "value",
+                    origin: "key",
                     input,
                     key,
-                    value: value2
+                    // @ts-expect-error
+                    value: input[key]
                   }
                 ]
               });
@@ -31793,6 +32869,7 @@ function strictObject(entries, message) {
 }
 
 // src/schemas/strictObject/strictObjectAsync.ts
+// @__NO_SIDE_EFFECTS__
 function strictObjectAsync(entries, message) {
   return {
     kind: "schema",
@@ -31802,67 +32879,103 @@ function strictObjectAsync(entries, message) {
     async: true,
     entries,
     message,
-    async _run(dataset, config2) {
+    get "~standard"() {
+      return _getStandardProps(this);
+    },
+    async "~run"(dataset, config2) {
       const input = dataset.value;
       if (input && typeof input === "object") {
         dataset.typed = true;
         dataset.value = {};
         const valueDatasets = await Promise.all(
-          Object.entries(this.entries).map(async ([key, schema]) => {
-            const value2 = input[key];
+          Object.entries(this.entries).map(async ([key, valueSchema]) => {
+            if (key in input || (valueSchema.type === "exact_optional" || valueSchema.type === "optional" || valueSchema.type === "nullish") && // @ts-expect-error
+            valueSchema.default !== void 0) {
+              const value2 = key in input ? (
+                // @ts-expect-error
+                input[key]
+              ) : await getDefault(valueSchema);
+              return [
+                key,
+                value2,
+                valueSchema,
+                await valueSchema["~run"]({ value: value2 }, config2)
+              ];
+            }
             return [
               key,
-              value2,
-              await schema._run({ typed: false, value: value2 }, config2)
+              // @ts-expect-error
+              input[key],
+              valueSchema,
+              null
             ];
           })
         );
-        for (const [key, value2, valueDataset] of valueDatasets) {
-          if (valueDataset.issues) {
-            const pathItem = {
-              type: "object",
-              origin: "value",
-              input,
-              key,
-              value: value2
-            };
-            for (const issue of valueDataset.issues) {
-              if (issue.path) {
-                issue.path.unshift(pathItem);
-              } else {
-                issue.path = [pathItem];
+        for (const [key, value2, valueSchema, valueDataset] of valueDatasets) {
+          if (valueDataset) {
+            if (valueDataset.issues) {
+              const pathItem = {
+                type: "object",
+                origin: "value",
+                input,
+                key,
+                value: value2
+              };
+              for (const issue of valueDataset.issues) {
+                if (issue.path) {
+                  issue.path.unshift(pathItem);
+                } else {
+                  issue.path = [pathItem];
+                }
+                dataset.issues?.push(issue);
               }
-              dataset.issues?.push(issue);
+              if (!dataset.issues) {
+                dataset.issues = valueDataset.issues;
+              }
+              if (config2.abortEarly) {
+                dataset.typed = false;
+                break;
+              }
             }
-            if (!dataset.issues) {
-              dataset.issues = valueDataset.issues;
-            }
-            if (config2.abortEarly) {
+            if (!valueDataset.typed) {
               dataset.typed = false;
+            }
+            dataset.value[key] = valueDataset.value;
+          } else if (valueSchema.fallback !== void 0) {
+            dataset.value[key] = await getFallback(valueSchema);
+          } else if (valueSchema.type !== "exact_optional" && valueSchema.type !== "optional" && valueSchema.type !== "nullish") {
+            _addIssue(this, "key", dataset, config2, {
+              input: void 0,
+              expected: `"${key}"`,
+              path: [
+                {
+                  type: "object",
+                  origin: "key",
+                  input,
+                  key,
+                  value: value2
+                }
+              ]
+            });
+            if (config2.abortEarly) {
               break;
             }
-          }
-          if (!valueDataset.typed) {
-            dataset.typed = false;
-          }
-          if (valueDataset.value !== void 0 || key in input) {
-            dataset.value[key] = valueDataset.value;
           }
         }
         if (!dataset.issues || !config2.abortEarly) {
           for (const key in input) {
             if (!(key in this.entries)) {
-              const value2 = input[key];
-              _addIssue(this, "type", dataset, config2, {
-                input: value2,
+              _addIssue(this, "key", dataset, config2, {
+                input: key,
                 expected: "never",
                 path: [
                   {
                     type: "object",
-                    origin: "value",
+                    origin: "key",
                     input,
                     key,
-                    value: value2
+                    // @ts-expect-error
+                    value: input[key]
                   }
                 ]
               });
@@ -31879,6 +32992,7 @@ function strictObjectAsync(entries, message) {
 }
 
 // src/schemas/strictTuple/strictTuple.ts
+// @__NO_SIDE_EFFECTS__
 function strictTuple(items, message) {
   return {
     kind: "schema",
@@ -31888,17 +33002,17 @@ function strictTuple(items, message) {
     async: false,
     items,
     message,
-    _run(dataset, config2) {
+    get "~standard"() {
+      return _getStandardProps(this);
+    },
+    "~run"(dataset, config2) {
       const input = dataset.value;
       if (Array.isArray(input)) {
         dataset.typed = true;
         dataset.value = [];
         for (let key = 0; key < this.items.length; key++) {
           const value2 = input[key];
-          const itemDataset = this.items[key]._run(
-            { typed: false, value: value2 },
-            config2
-          );
+          const itemDataset = this.items[key]["~run"]({ value: value2 }, config2);
           if (itemDataset.issues) {
             const pathItem = {
               type: "array",
@@ -31929,9 +33043,8 @@ function strictTuple(items, message) {
           dataset.value.push(itemDataset.value);
         }
         if (!(dataset.issues && config2.abortEarly) && this.items.length < input.length) {
-          const value2 = input[items.length];
           _addIssue(this, "type", dataset, config2, {
-            input: value2,
+            input: input[this.items.length],
             expected: "never",
             path: [
               {
@@ -31939,7 +33052,7 @@ function strictTuple(items, message) {
                 origin: "value",
                 input,
                 key: this.items.length,
-                value: value2
+                value: input[this.items.length]
               }
             ]
           });
@@ -31953,6 +33066,7 @@ function strictTuple(items, message) {
 }
 
 // src/schemas/strictTuple/strictTupleAsync.ts
+// @__NO_SIDE_EFFECTS__
 function strictTupleAsync(items, message) {
   return {
     kind: "schema",
@@ -31962,7 +33076,10 @@ function strictTupleAsync(items, message) {
     async: true,
     items,
     message,
-    async _run(dataset, config2) {
+    get "~standard"() {
+      return _getStandardProps(this);
+    },
+    async "~run"(dataset, config2) {
       const input = dataset.value;
       if (Array.isArray(input)) {
         dataset.typed = true;
@@ -31970,11 +33087,7 @@ function strictTupleAsync(items, message) {
         const itemDatasets = await Promise.all(
           this.items.map(async (item, key) => {
             const value2 = input[key];
-            return [
-              key,
-              value2,
-              await item._run({ typed: false, value: value2 }, config2)
-            ];
+            return [key, value2, await item["~run"]({ value: value2 }, config2)];
           })
         );
         for (const [key, value2, itemDataset] of itemDatasets) {
@@ -32008,9 +33121,8 @@ function strictTupleAsync(items, message) {
           dataset.value.push(itemDataset.value);
         }
         if (!(dataset.issues && config2.abortEarly) && this.items.length < input.length) {
-          const value2 = input[items.length];
           _addIssue(this, "type", dataset, config2, {
-            input: value2,
+            input: input[this.items.length],
             expected: "never",
             path: [
               {
@@ -32018,7 +33130,7 @@ function strictTupleAsync(items, message) {
                 origin: "value",
                 input,
                 key: this.items.length,
-                value: value2
+                value: input[this.items.length]
               }
             ]
           });
@@ -32032,6 +33144,7 @@ function strictTupleAsync(items, message) {
 }
 
 // src/schemas/string/string.ts
+// @__NO_SIDE_EFFECTS__
 function string(message) {
   return {
     kind: "schema",
@@ -32040,7 +33153,10 @@ function string(message) {
     expects: "string",
     async: false,
     message,
-    _run(dataset, config2) {
+    get "~standard"() {
+      return _getStandardProps(this);
+    },
+    "~run"(dataset, config2) {
       if (typeof dataset.value === "string") {
         dataset.typed = true;
       } else {
@@ -32052,6 +33168,7 @@ function string(message) {
 }
 
 // src/schemas/symbol/symbol.ts
+// @__NO_SIDE_EFFECTS__
 function symbol(message) {
   return {
     kind: "schema",
@@ -32060,7 +33177,10 @@ function symbol(message) {
     expects: "symbol",
     async: false,
     message,
-    _run(dataset, config2) {
+    get "~standard"() {
+      return _getStandardProps(this);
+    },
+    "~run"(dataset, config2) {
       if (typeof dataset.value === "symbol") {
         dataset.typed = true;
       } else {
@@ -32072,6 +33192,7 @@ function symbol(message) {
 }
 
 // src/schemas/tuple/tuple.ts
+// @__NO_SIDE_EFFECTS__
 function tuple(items, message) {
   return {
     kind: "schema",
@@ -32081,17 +33202,17 @@ function tuple(items, message) {
     async: false,
     items,
     message,
-    _run(dataset, config2) {
+    get "~standard"() {
+      return _getStandardProps(this);
+    },
+    "~run"(dataset, config2) {
       const input = dataset.value;
       if (Array.isArray(input)) {
         dataset.typed = true;
         dataset.value = [];
         for (let key = 0; key < this.items.length; key++) {
           const value2 = input[key];
-          const itemDataset = this.items[key]._run(
-            { typed: false, value: value2 },
-            config2
-          );
+          const itemDataset = this.items[key]["~run"]({ value: value2 }, config2);
           if (itemDataset.issues) {
             const pathItem = {
               type: "array",
@@ -32130,6 +33251,7 @@ function tuple(items, message) {
 }
 
 // src/schemas/tuple/tupleAsync.ts
+// @__NO_SIDE_EFFECTS__
 function tupleAsync(items, message) {
   return {
     kind: "schema",
@@ -32139,7 +33261,10 @@ function tupleAsync(items, message) {
     async: true,
     items,
     message,
-    async _run(dataset, config2) {
+    get "~standard"() {
+      return _getStandardProps(this);
+    },
+    async "~run"(dataset, config2) {
       const input = dataset.value;
       if (Array.isArray(input)) {
         dataset.typed = true;
@@ -32147,11 +33272,7 @@ function tupleAsync(items, message) {
         const itemDatasets = await Promise.all(
           this.items.map(async (item, key) => {
             const value2 = input[key];
-            return [
-              key,
-              value2,
-              await item._run({ typed: false, value: value2 }, config2)
-            ];
+            return [key, value2, await item["~run"]({ value: value2 }, config2)];
           })
         );
         for (const [key, value2, itemDataset] of itemDatasets) {
@@ -32193,6 +33314,7 @@ function tupleAsync(items, message) {
 }
 
 // src/schemas/tupleWithRest/tupleWithRest.ts
+// @__NO_SIDE_EFFECTS__
 function tupleWithRest(items, rest, message) {
   return {
     kind: "schema",
@@ -32203,17 +33325,17 @@ function tupleWithRest(items, rest, message) {
     items,
     rest,
     message,
-    _run(dataset, config2) {
+    get "~standard"() {
+      return _getStandardProps(this);
+    },
+    "~run"(dataset, config2) {
       const input = dataset.value;
       if (Array.isArray(input)) {
         dataset.typed = true;
         dataset.value = [];
         for (let key = 0; key < this.items.length; key++) {
           const value2 = input[key];
-          const itemDataset = this.items[key]._run(
-            { typed: false, value: value2 },
-            config2
-          );
+          const itemDataset = this.items[key]["~run"]({ value: value2 }, config2);
           if (itemDataset.issues) {
             const pathItem = {
               type: "array",
@@ -32246,7 +33368,7 @@ function tupleWithRest(items, rest, message) {
         if (!dataset.issues || !config2.abortEarly) {
           for (let key = this.items.length; key < input.length; key++) {
             const value2 = input[key];
-            const itemDataset = this.rest._run({ typed: false, value: value2 }, config2);
+            const itemDataset = this.rest["~run"]({ value: value2 }, config2);
             if (itemDataset.issues) {
               const pathItem = {
                 type: "array",
@@ -32286,6 +33408,7 @@ function tupleWithRest(items, rest, message) {
 }
 
 // src/schemas/tupleWithRest/tupleWithRestAsync.ts
+// @__NO_SIDE_EFFECTS__
 function tupleWithRestAsync(items, rest, message) {
   return {
     kind: "schema",
@@ -32296,7 +33419,10 @@ function tupleWithRestAsync(items, rest, message) {
     items,
     rest,
     message,
-    async _run(dataset, config2) {
+    get "~standard"() {
+      return _getStandardProps(this);
+    },
+    async "~run"(dataset, config2) {
       const input = dataset.value;
       if (Array.isArray(input)) {
         dataset.typed = true;
@@ -32309,7 +33435,7 @@ function tupleWithRestAsync(items, rest, message) {
               return [
                 key,
                 value2,
-                await item._run({ typed: false, value: value2 }, config2)
+                await item["~run"]({ value: value2 }, config2)
               ];
             })
           ),
@@ -32319,7 +33445,7 @@ function tupleWithRestAsync(items, rest, message) {
               return [
                 key + this.items.length,
                 value2,
-                await this.rest._run({ typed: false, value: value2 }, config2)
+                await this.rest["~run"]({ value: value2 }, config2)
               ];
             })
           )
@@ -32395,6 +33521,7 @@ function tupleWithRestAsync(items, rest, message) {
 }
 
 // src/schemas/undefined/undefined.ts
+// @__NO_SIDE_EFFECTS__
 function undefined_(message) {
   return {
     kind: "schema",
@@ -32403,7 +33530,10 @@ function undefined_(message) {
     expects: "undefined",
     async: false,
     message,
-    _run(dataset, config2) {
+    get "~standard"() {
+      return _getStandardProps(this);
+    },
+    "~run"(dataset, config2) {
       if (dataset.value === void 0) {
         dataset.typed = true;
       } else {
@@ -32415,70 +33545,65 @@ function undefined_(message) {
 }
 
 // src/schemas/undefinedable/undefinedable.ts
-function undefinedable(wrapped, ...args) {
-  const schema = {
+// @__NO_SIDE_EFFECTS__
+function undefinedable(wrapped, default_) {
+  return {
     kind: "schema",
     type: "undefinedable",
     reference: undefinedable,
     expects: `(${wrapped.expects} | undefined)`,
     async: false,
     wrapped,
-    _run(dataset, config2) {
+    default: default_,
+    get "~standard"() {
+      return _getStandardProps(this);
+    },
+    "~run"(dataset, config2) {
       if (dataset.value === void 0) {
-        if ("default" in this) {
-          dataset.value = getDefault(
-            this,
-            dataset,
-            config2
-          );
+        if (this.default !== void 0) {
+          dataset.value = getDefault(this, dataset, config2);
         }
         if (dataset.value === void 0) {
           dataset.typed = true;
           return dataset;
         }
       }
-      return this.wrapped._run(dataset, config2);
+      return this.wrapped["~run"](dataset, config2);
     }
   };
-  if (0 in args) {
-    schema.default = args[0];
-  }
-  return schema;
 }
 
 // src/schemas/undefinedable/undefinedableAsync.ts
-function undefinedableAsync(wrapped, ...args) {
-  const schema = {
+// @__NO_SIDE_EFFECTS__
+function undefinedableAsync(wrapped, default_) {
+  return {
     kind: "schema",
     type: "undefinedable",
     reference: undefinedableAsync,
     expects: `(${wrapped.expects} | undefined)`,
     async: true,
     wrapped,
-    async _run(dataset, config2) {
+    default: default_,
+    get "~standard"() {
+      return _getStandardProps(this);
+    },
+    async "~run"(dataset, config2) {
       if (dataset.value === void 0) {
-        if ("default" in this) {
-          dataset.value = await getDefault(
-            this,
-            dataset,
-            config2
-          );
+        if (this.default !== void 0) {
+          dataset.value = await getDefault(this, dataset, config2);
         }
         if (dataset.value === void 0) {
           dataset.typed = true;
           return dataset;
         }
       }
-      return this.wrapped._run(dataset, config2);
+      return this.wrapped["~run"](dataset, config2);
     }
   };
-  if (0 in args) {
-    schema.default = args[0];
-  }
-  return schema;
 }
 
 // src/schemas/union/utils/_subIssues/_subIssues.ts
+// @__NO_SIDE_EFFECTS__
 function _subIssues(datasets) {
   let issues;
   if (datasets) {
@@ -32494,6 +33619,7 @@ function _subIssues(datasets) {
 }
 
 // src/schemas/union/union.ts
+// @__NO_SIDE_EFFECTS__
 function union(options, message) {
   return {
     kind: "schema",
@@ -32506,15 +33632,15 @@ function union(options, message) {
     async: false,
     options,
     message,
-    _run(dataset, config2) {
+    get "~standard"() {
+      return _getStandardProps(this);
+    },
+    "~run"(dataset, config2) {
       let validDataset;
       let typedDatasets;
       let untypedDatasets;
       for (const schema of this.options) {
-        const optionDataset = schema._run(
-          { typed: false, value: dataset.value },
-          config2
-        );
+        const optionDataset = schema["~run"]({ value: dataset.value }, config2);
         if (optionDataset.typed) {
           if (optionDataset.issues) {
             if (typedDatasets) {
@@ -32558,6 +33684,7 @@ function union(options, message) {
 }
 
 // src/schemas/union/unionAsync.ts
+// @__NO_SIDE_EFFECTS__
 function unionAsync(options, message) {
   return {
     kind: "schema",
@@ -32570,13 +33697,16 @@ function unionAsync(options, message) {
     async: true,
     options,
     message,
-    async _run(dataset, config2) {
+    get "~standard"() {
+      return _getStandardProps(this);
+    },
+    async "~run"(dataset, config2) {
       let validDataset;
       let typedDatasets;
       let untypedDatasets;
       for (const schema of this.options) {
-        const optionDataset = await schema._run(
-          { typed: false, value: dataset.value },
+        const optionDataset = await schema["~run"](
+          { value: dataset.value },
           config2
         );
         if (optionDataset.typed) {
@@ -32622,6 +33752,7 @@ function unionAsync(options, message) {
 }
 
 // src/schemas/unknown/unknown.ts
+// @__NO_SIDE_EFFECTS__
 function unknown() {
   return {
     kind: "schema",
@@ -32629,7 +33760,10 @@ function unknown() {
     reference: unknown,
     expects: "unknown",
     async: false,
-    _run(dataset) {
+    get "~standard"() {
+      return _getStandardProps(this);
+    },
+    "~run"(dataset) {
       dataset.typed = true;
       return dataset;
     }
@@ -32637,6 +33771,7 @@ function unknown() {
 }
 
 // src/schemas/variant/variant.ts
+// @__NO_SIDE_EFFECTS__
 function variant(key, options, message) {
   return {
     kind: "schema",
@@ -32647,7 +33782,10 @@ function variant(key, options, message) {
     key,
     options,
     message,
-    _run(dataset, config2) {
+    get "~standard"() {
+      return _getStandardProps(this);
+    },
+    "~run"(dataset, config2) {
       const input = dataset.value;
       if (input && typeof input === "object") {
         let outputDataset;
@@ -32662,11 +33800,12 @@ function variant(key, options, message) {
               let keysAreValid = true;
               let currentPriority = 0;
               for (const currentKey of allKeys) {
-                if (schema.entries[currentKey]._run(
+                const discriminatorSchema = schema.entries[currentKey];
+                if (currentKey in input ? discriminatorSchema["~run"](
                   // @ts-expect-error
                   { typed: false, value: input[currentKey] },
                   config2
-                ).issues) {
+                ).issues : discriminatorSchema.type !== "exact_optional" && discriminatorSchema.type !== "optional" && discriminatorSchema.type !== "nullish") {
                   keysAreValid = false;
                   if (invalidDiscriminatorKey !== currentKey && (maxDiscriminatorPriority < currentPriority || maxDiscriminatorPriority === currentPriority && currentKey in input && !(invalidDiscriminatorKey in input))) {
                     maxDiscriminatorPriority = currentPriority;
@@ -32683,10 +33822,7 @@ function variant(key, options, message) {
                 currentPriority++;
               }
               if (keysAreValid) {
-                const optionDataset = schema._run(
-                  { typed: false, value: input },
-                  config2
-                );
+                const optionDataset = schema["~run"]({ value: input }, config2);
                 if (!outputDataset || !outputDataset.typed && optionDataset.typed) {
                   outputDataset = optionDataset;
                 }
@@ -32725,6 +33861,7 @@ function variant(key, options, message) {
 }
 
 // src/schemas/variant/variantAsync.ts
+// @__NO_SIDE_EFFECTS__
 function variantAsync(key, options, message) {
   return {
     kind: "schema",
@@ -32735,7 +33872,10 @@ function variantAsync(key, options, message) {
     key,
     options,
     message,
-    async _run(dataset, config2) {
+    get "~standard"() {
+      return _getStandardProps(this);
+    },
+    async "~run"(dataset, config2) {
       const input = dataset.value;
       if (input && typeof input === "object") {
         let outputDataset;
@@ -32750,11 +33890,12 @@ function variantAsync(key, options, message) {
               let keysAreValid = true;
               let currentPriority = 0;
               for (const currentKey of allKeys) {
-                if ((await schema.entries[currentKey]._run(
+                const discriminatorSchema = schema.entries[currentKey];
+                if (currentKey in input ? (await discriminatorSchema["~run"](
                   // @ts-expect-error
                   { typed: false, value: input[currentKey] },
                   config2
-                )).issues) {
+                )).issues : discriminatorSchema.type !== "exact_optional" && discriminatorSchema.type !== "optional" && discriminatorSchema.type !== "nullish") {
                   keysAreValid = false;
                   if (invalidDiscriminatorKey !== currentKey && (maxDiscriminatorPriority < currentPriority || maxDiscriminatorPriority === currentPriority && currentKey in input && !(invalidDiscriminatorKey in input))) {
                     maxDiscriminatorPriority = currentPriority;
@@ -32771,8 +33912,8 @@ function variantAsync(key, options, message) {
                 currentPriority++;
               }
               if (keysAreValid) {
-                const optionDataset = await schema._run(
-                  { typed: false, value: input },
+                const optionDataset = await schema["~run"](
+                  { value: input },
                   config2
                 );
                 if (!outputDataset || !outputDataset.typed && optionDataset.typed) {
@@ -32813,6 +33954,7 @@ function variantAsync(key, options, message) {
 }
 
 // src/schemas/void/void.ts
+// @__NO_SIDE_EFFECTS__
 function void_(message) {
   return {
     kind: "schema",
@@ -32821,7 +33963,10 @@ function void_(message) {
     expects: "void",
     async: false,
     message,
-    _run(dataset, config2) {
+    get "~standard"() {
+      return _getStandardProps(this);
+    },
+    "~run"(dataset, config2) {
       if (dataset.value === void 0) {
         dataset.typed = true;
       } else {
@@ -32833,11 +33978,13 @@ function void_(message) {
 }
 
 // src/methods/keyof/keyof.ts
+// @__NO_SIDE_EFFECTS__
 function keyof(schema, message) {
   return picklist(Object.keys(schema.entries), message);
 }
 
 // src/methods/omit/omit.ts
+// @__NO_SIDE_EFFECTS__
 function omit(schema, keys) {
   const entries = {
     ...schema.entries
@@ -32845,15 +33992,18 @@ function omit(schema, keys) {
   for (const key of keys) {
     delete entries[key];
   }
-  return { ...schema, entries };
+  return {
+    ...schema,
+    entries,
+    get "~standard"() {
+      return _getStandardProps(this);
+    }
+  };
 }
 
 // src/methods/parse/parse.ts
 function parse(schema, input, config2) {
-  const dataset = schema._run(
-    { typed: false, value: input },
-    getGlobalConfig(config2)
-  );
+  const dataset = schema["~run"]({ value: input }, getGlobalConfig(config2));
   if (dataset.issues) {
     throw new ValiError(dataset.issues);
   }
@@ -32862,8 +34012,8 @@ function parse(schema, input, config2) {
 
 // src/methods/parse/parseAsync.ts
 async function parseAsync(schema, input, config2) {
-  const dataset = await schema._run(
-    { typed: false, value: input },
+  const dataset = await schema["~run"](
+    { value: input },
     getGlobalConfig(config2)
   );
   if (dataset.issues) {
@@ -32873,6 +34023,7 @@ async function parseAsync(schema, input, config2) {
 }
 
 // src/methods/parser/parser.ts
+// @__NO_SIDE_EFFECTS__
 function parser(schema, config2) {
   const func = (input) => parse(schema, input, config2);
   func.schema = schema;
@@ -32881,6 +34032,7 @@ function parser(schema, config2) {
 }
 
 // src/methods/parser/parserAsync.ts
+// @__NO_SIDE_EFFECTS__
 function parserAsync(schema, config2) {
   const func = (input) => parseAsync(schema, input, config2);
   func.schema = schema;
@@ -32889,38 +34041,63 @@ function parserAsync(schema, config2) {
 }
 
 // src/methods/partial/partial.ts
+// @__NO_SIDE_EFFECTS__
 function partial(schema, keys) {
   const entries = {};
   for (const key in schema.entries) {
     entries[key] = !keys || keys.includes(key) ? optional(schema.entries[key]) : schema.entries[key];
   }
-  return { ...schema, entries };
+  return {
+    ...schema,
+    entries,
+    get "~standard"() {
+      return _getStandardProps(this);
+    }
+  };
 }
 
 // src/methods/partial/partialAsync.ts
+// @__NO_SIDE_EFFECTS__
 function partialAsync(schema, keys) {
   const entries = {};
   for (const key in schema.entries) {
     entries[key] = !keys || keys.includes(key) ? optionalAsync(schema.entries[key]) : schema.entries[key];
   }
-  return { ...schema, entries };
+  return {
+    ...schema,
+    entries,
+    get "~standard"() {
+      return _getStandardProps(this);
+    }
+  };
 }
 
 // src/methods/pick/pick.ts
+// @__NO_SIDE_EFFECTS__
 function pick(schema, keys) {
   const entries = {};
   for (const key of keys) {
     entries[key] = schema.entries[key];
   }
-  return { ...schema, entries };
+  return {
+    ...schema,
+    entries,
+    get "~standard"() {
+      return _getStandardProps(this);
+    }
+  };
 }
 
 // src/methods/pipe/pipe.ts
+// @__NO_SIDE_EFFECTS__
 function pipe(...pipe2) {
   return {
     ...pipe2[0],
     pipe: pipe2,
-    _run(dataset, config2) {
+    get "~standard"() {
+      return _getStandardProps(this);
+    },
+    "~run"(dataset, config2) {
       for (const item of pipe2) {
         if (item.kind !== "metadata") {
           if (dataset.issues && (item.kind === "schema" || item.kind === "transformation")) {
@@ -32928,7 +34105,7 @@ function pipe(...pipe2) {
             break;
           }
           if (!dataset.issues || !config2.abortEarly && !config2.abortPipeEarly) {
-            dataset = item._run(dataset, config2);
+            dataset = item["~run"](dataset, config2);
           }
         }
       }
@@ -32938,12 +34115,16 @@ function pipe(...pipe2) {
 }
 
 // src/methods/pipe/pipeAsync.ts
+// @__NO_SIDE_EFFECTS__
 function pipeAsync(...pipe2) {
   return {
     ...pipe2[0],
     pipe: pipe2,
     async: true,
-    async _run(dataset, config2) {
+    get "~standard"() {
+      return _getStandardProps(this);
+    },
+    async "~run"(dataset, config2) {
       for (const item of pipe2) {
         if (item.kind !== "metadata") {
           if (dataset.issues && (item.kind === "schema" || item.kind === "transformation")) {
@@ -32951,7 +34132,7 @@ function pipeAsync(...pipe2) {
             break;
           }
           if (!dataset.issues || !config2.abortEarly && !config2.abortPipeEarly) {
-            dataset = await item._run(dataset, config2);
+            dataset = await item["~run"](dataset, config2);
           }
         }
       }
@@ -32961,6 +34142,7 @@ function pipeAsync(...pipe2) {
 }
 
 // src/methods/required/required.ts
+// @__NO_SIDE_EFFECTS__
 function required(schema, arg2, arg3) {
   const keys = Array.isArray(arg2) ? arg2 : void 0;
   const message = Array.isArray(arg2) ? arg3 : arg2;
@@ -32968,10 +34150,17 @@ function required(schema, arg2, arg3) {
   for (const key in schema.entries) {
     entries[key] = !keys || keys.includes(key) ? nonOptional(schema.entries[key], message) : schema.entries[key];
   }
-  return { ...schema, entries };
+  return {
+    ...schema,
+    entries,
+    get "~standard"() {
+      return _getStandardProps(this);
+    }
+  };
 }
 
 // src/methods/required/requiredAsync.ts
+// @__NO_SIDE_EFFECTS__
 function requiredAsync(schema, arg2, arg3) {
   const keys = Array.isArray(arg2) ? arg2 : void 0;
   const message = Array.isArray(arg2) ? arg3 : arg2;
@@ -32979,15 +34168,19 @@ function requiredAsync(schema, arg2, arg3) {
   for (const key in schema.entries) {
     entries[key] = !keys || keys.includes(key) ? nonOptionalAsync(schema.entries[key], message) : schema.entries[key];
   }
-  return { ...schema, entries };
+  return {
+    ...schema,
+    entries,
+    get "~standard"() {
+      return _getStandardProps(this);
+    }
+  };
 }
 
 // src/methods/safeParse/safeParse.ts
+// @__NO_SIDE_EFFECTS__
 function safeParse(schema, input, config2) {
-  const dataset = schema._run(
-    { typed: false, value: input },
-    getGlobalConfig(config2)
-  );
+  const dataset = schema["~run"]({ value: input }, getGlobalConfig(config2));
   return {
     typed: dataset.typed,
     success: !dataset.issues,
@@ -32997,9 +34190,10 @@ function safeParse(schema, input, config2) {
 }
 
 // src/methods/safeParse/safeParseAsync.ts
+// @__NO_SIDE_EFFECTS__
 async function safeParseAsync(schema, input, config2) {
-  const dataset = await schema._run(
-    { typed: false, value: input },
+  const dataset = await schema["~run"](
+    { value: input },
     getGlobalConfig(config2)
   );
   return {
@@ -33011,6 +34205,7 @@ async function safeParseAsync(schema, input, config2) {
 }
 
 // src/methods/safeParser/safeParser.ts
+// @__NO_SIDE_EFFECTS__
 function safeParser(schema, config2) {
   const func = (input) => safeParse(schema, input, config2);
   func.schema = schema;
@@ -33019,6 +34214,7 @@ function safeParser(schema, config2) {
 }
 
 // src/methods/safeParser/safeParserAsync.ts
+// @__NO_SIDE_EFFECTS__
 function safeParserAsync(schema, config2) {
   const func = (input) => safeParseAsync(schema, input, config2);
   func.schema = schema;
@@ -33027,6 +34223,7 @@ function safeParserAsync(schema, config2) {
 }
 
 // src/methods/unwrap/unwrap.ts
+// @__NO_SIDE_EFFECTS__
 function unwrap(schema) {
   return schema.wrapped;
 }
