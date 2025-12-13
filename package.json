@@ -31,14 +31,14 @@
   "devDependencies": {
     "@eslint/js": "9.39.2",
     "@vercel/ncc": "0.38.3",
-    "@vitest/coverage-v8": "3.2.4",
+    "@vitest/coverage-v8": "4.0.15",
     "eslint": "9.39.2",
     "globals": "16.5.0",
     "prettier": "3.7.4",
     "prettier-plugin-organize-imports": "4.3.0",
     "typescript": "5.9.3",
     "typescript-eslint": "8.49.0",
-    "vitest": "3.2.4"
+    "vitest": "4.0.15"
   },
   "private": true,
   "volta": {
